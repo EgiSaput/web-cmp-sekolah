@@ -89,9 +89,6 @@
      letter-spacing: 1px;
  }
 
- [data-theme="dark"] .brand-copy strong {
-     color: var(--color-text);
- }
 
  .brand-copy small {
      color: var(--color-muted);

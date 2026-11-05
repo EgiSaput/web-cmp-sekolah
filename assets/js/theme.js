@@ -1,21 +1,60 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const button = document.getElementById("themeToggle");
-  const savedTheme = localStorage.getItem("maaz-theme") || window.SITE_CONFIG.defaultTheme;
-  document.documentElement.setAttribute("data-theme", savedTheme);
-  updateIcon(savedTheme);
+/* =========================================================
+   MA AZ-ZAHRA - AUTO THEME BY LOCAL DEVICE TIME
+   06:00 - 17:59 : Light
+   18:00 - 05:59 : Dark
+   No manual theme toggle is used.
+========================================================= */
+(() => {
+    const LIGHT_START_HOUR = 6;
+    const DARK_START_HOUR = 18;
+    let timerId = null;
 
-  button?.addEventListener("click", () => {
-    const nextTheme = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", nextTheme);
-    localStorage.setItem("maaz-theme", nextTheme);
-    updateIcon(nextTheme);
-  });
+    function getThemeByLocalTime(date = new Date()) {
+        const hour = date.getHours();
+        return hour >= LIGHT_START_HOUR && hour < DARK_START_HOUR
+            ? "light"
+            : "dark";
+    }
 
-  function updateIcon(theme) {
-    if (!button) return;
-    button.innerHTML = theme === "dark"
-      ? '<i class="fa-regular fa-sun"></i>'
-      : '<i class="fa-regular fa-moon"></i>';
-    button.setAttribute("aria-label", theme === "dark" ? "Aktifkan mode terang" : "Aktifkan mode gelap");
-  }
-});
+    function applyAutomaticTheme() {
+        const theme = getThemeByLocalTime();
+        const root = document.documentElement;
+
+        root.setAttribute("data-theme", theme);
+        root.style.colorScheme = theme;
+
+        const themeColor = document.querySelector('meta[name="theme-color"]');
+        if (themeColor) {
+            themeColor.setAttribute(
+                "content",
+                theme === "dark" ? "#101b2a" : "#12345a"
+            );
+        }
+    }
+
+    function scheduleNextCheck() {
+        if (timerId) window.clearTimeout(timerId);
+
+        // Periksa lagi pada awal menit berikutnya agar perubahan jam perangkat
+        // segera diterapkan tanpa perlu memuat ulang halaman.
+        const now = new Date();
+        const delay = (60 - now.getSeconds()) * 1000 - now.getMilliseconds();
+
+        timerId = window.setTimeout(() => {
+            applyAutomaticTheme();
+            scheduleNextCheck();
+        }, Math.max(delay, 250));
+    }
+
+    // Terapkan tema sedini mungkin untuk menghindari kilatan tema yang salah.
+    applyAutomaticTheme();
+    scheduleNextCheck();
+
+    // Perbarui juga ketika tab kembali aktif atau pengguna mengubah jam perangkat.
+    document.addEventListener("visibilitychange", () => {
+        if (!document.hidden) applyAutomaticTheme();
+    });
+
+    window.addEventListener("focus", applyAutomaticTheme);
+    window.addEventListener("pageshow", applyAutomaticTheme);
+})();

@@ -193,9 +193,6 @@
      line-height: 1.2;
  }
 
- [data-theme="dark"] .stat-item strong {
-     color: var(--color-text);
- }
 
  .stat-item small {
      color: var(--color-muted);
@@ -530,9 +527,6 @@
      line-height: 1.5;
  }
 
- [data-theme="dark"] .news-card h3 {
-     color: var(--color-text);
- }
 
  .news-card p {
      margin: 0;

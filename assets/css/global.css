@@ -68,11 +68,6 @@ img {
     letter-spacing: -1.6px;
 }
 
-[data-theme="dark"] .section-heading h2,
-[data-theme="dark"] .about-copy h2,
-[data-theme="dark"] .principal-copy h2 {
-    color: var(--color-text);
-}
 
 .section-heading h2 em,
 .about-copy h2 em,
@@ -137,9 +132,6 @@ img {
     color: var(--color-navy);
 }
 
-[data-theme="dark"] .btn-outline-dark {
-    color: var(--color-text);
-}
 
 .btn-outline-dark:hover {
     border-color: var(--color-gold);
@@ -156,9 +148,6 @@ img {
     font-weight: 800;
 }
 
-[data-theme="dark"] .text-link {
-    color: var(--color-gold);
-}
 
 .text-link i {
     color: #b88c45;

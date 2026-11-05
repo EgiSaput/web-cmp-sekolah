@@ -18,11 +18,3 @@
   --shadow-soft: 0 12px 35px rgba(18, 52, 90, .09);
   --transition: .25s ease;
 }
-[data-theme="dark"] {
-  --color-bg: #101b2d;
-  --color-bg-soft: #15243a;
-  --color-text: #e8eef6;
-  --color-muted: #aab8ca;
-  --color-border: #2b3d55;
-  --shadow-soft: 0 12px 35px rgba(0,0,0,.22);
-}
