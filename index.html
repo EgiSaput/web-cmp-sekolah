@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Website profil dan informasi MA Az-Zahra. Mengenal sekolah, program pendidikan, kegiatan, prestasi, dan informasi penerimaan peserta didik baru.">
+  <meta name="theme-color" content="#12345a">
+  <title>MA Az-Zahra | Membangun Generasi Berilmu dan Berakhlak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/navbar.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+  <div class="announcement-bar">
+    <div class="container announcement-inner">
+      <span><i class="fa-solid fa-location-dot"></i> Jl. Contoh Alamat Sekolah, Indonesia</span>
+      <div class="announcement-right">
+        <a href="mailto:info@ma-azzahra.sch.id"><i class="fa-regular fa-envelope"></i> info@ma-azzahra.sch.id</a>
+        <button class="language-toggle" id="languageToggle" type="button" aria-label="Ganti bahasa">ID <span>/</span> EN</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a class="brand" href="index.html" aria-label="MA Az-Zahra Beranda">
+        <span class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></span>
+        <span class="brand-copy"><strong>MA AZ-ZAHRA</strong><small>Madrasah Aliyah</small></span>
+      </a>
+
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Buka navigasi" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
+        <a class="nav-link active" href="index.html" data-i18n="nav.home">Beranda</a>
+        <a class="nav-link" href="pages/profil.html" data-i18n="nav.profile">Profil</a>
+        <a class="nav-link" href="pages/akademik.html" data-i18n="nav.academic">Akademik</a>
+        <a class="nav-link" href="pages/guru.html" data-i18n="nav.teachers">Guru</a>
+        <a class="nav-link" href="pages/berita.html" data-i18n="nav.news">Informasi</a>
+        <a class="nav-link" href="pages/galeri.html" data-i18n="nav.gallery">Galeri</a>
+        <a class="nav-link nav-ppdb" href="pages/ppdb.html" data-i18n="nav.admission">PPDB <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <a class="nav-link nav-contact" href="pages/kontak.html" data-i18n="nav.contact">Kontak</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Aktifkan mode gelap">
+          <i class="fa-regular fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="hero-image"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <span class="eyebrow hero-eyebrow"><span></span> MADRASAH ALIYAH AZ-ZAHRA</span>
+        <h1 data-i18n="hero.title">Membangun Generasi<br><em>Berilmu & Berakhlak</em></h1>
+        <p data-i18n="hero.description">Tempat tumbuhnya generasi unggul yang berwawasan luas, berkarakter Islami, dan siap menghadapi masa depan.</p>
+        <div class="hero-actions">
+          <a href="pages/profil.html" class="btn btn-gold"><span data-i18n="hero.ctaPrimary">Jelajahi Sekolah</span> <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="pages/ppdb.html" class="btn btn-outline-light" data-i18n="hero.ctaSecondary">Informasi PPDB</a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-avatars">
+            <span><i class="fa-solid fa-user"></i></span><span><i class="fa-solid fa-user"></i></span><span><i class="fa-solid fa-user"></i></span>
+          </div>
+          <div><strong>Lingkungan belajar inspiratif</strong><small>Mendukung potensi setiap peserta didik</small></div>
+        </div>
+      </div>
+      <a class="hero-scroll" href="#about"><span></span> Scroll untuk menjelajah</a>
+      <div class="hero-index"><strong>01</strong><span>/</span> 04</div>
+    </section>
+
+    <section class="stats-section">
+      <div class="container stats-grid">
+        <div class="stat-item"><span class="stat-icon"><i class="fa-solid fa-user-graduate"></i></span><div><strong data-count="520">0</strong><small>Peserta Didik</small></div></div>
+        <div class="stat-item"><span class="stat-icon"><i class="fa-solid fa-chalkboard-user"></i></span><div><strong data-count="38">0</strong><small>Guru & Tenaga Pendidik</small></div></div>
+        <div class="stat-item"><span class="stat-icon"><i class="fa-solid fa-trophy"></i></span><div><strong data-count="45">0</strong><small>Prestasi Diraih</small></div></div>
+        <div class="stat-item"><span class="stat-icon"><i class="fa-solid fa-calendar-check"></i></span><div><strong data-count="18">0</strong><small>Tahun Pengalaman</small></div></div>
+      </div>
+      <p class="demo-note">* Seluruh angka pada prototype ini merupakan data ilustrasi.</p>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-visual reveal">
+          <div class="about-photo-main"><img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1000&q=85" alt="Ilustrasi gedung pendidikan"></div>
+          <div class="about-photo-small"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=85" alt="Ilustrasi kegiatan belajar"></div>
+          <div class="experience-card"><strong>18<span>+</span></strong><small>Tahun<br>menginspirasi</small></div>
+          <span class="decorative-dot"></span>
+        </div>
+        <div class="about-copy reveal">
+          <span class="section-kicker">MENGENAL KAMI</span>
+          <h2>Pendidikan Berkualitas untuk <em>Masa Depan Gemilang</em></h2>
+          <p class="section-description">MA Az-Zahra hadir sebagai lingkungan pendidikan yang mendukung perkembangan akademik, karakter, dan potensi peserta didik. Kami percaya bahwa setiap siswa memiliki kesempatan untuk tumbuh dan meraih cita-cita.</p>
+          <div class="about-points">
+            <div><span><i class="fa-solid fa-check"></i></span><div><strong>Pembelajaran berkualitas</strong><small>Proses belajar yang aktif dan bermakna.</small></div></div>
+            <div><span><i class="fa-solid fa-check"></i></span><div><strong>Penguatan karakter</strong><small>Mengembangkan sikap disiplin dan tanggung jawab.</small></div></div>
+            <div><span><i class="fa-solid fa-check"></i></span><div><strong>Pengembangan potensi</strong><small>Mendukung bakat dan minat setiap siswa.</small></div></div>
+          </div>
+          <a href="pages/profil.html" class="text-link">Kenali sekolah kami <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section programs-section">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <span class="section-kicker">PENDIDIKAN KAMI</span>
+          <h2>Ruang untuk <em>Tumbuh & Berkembang</em></h2>
+          <p class="section-description">Beragam program dirancang untuk membantu peserta didik mengembangkan pengetahuan, karakter, dan keterampilan.</p>
+        </div>
+        <div class="program-grid">
+          <article class="program-card reveal"><span class="program-icon"><i class="fa-solid fa-book-open-reader"></i></span><span class="program-number">01</span><h3>Pembelajaran Akademik</h3><p>Pengalaman belajar terarah untuk membangun pemahaman dan wawasan.</p><a href="pages/akademik.html" aria-label="Lihat program akademik"><i class="fa-solid fa-arrow-right"></i></a></article>
+          <article class="program-card featured reveal"><span class="program-icon"><i class="fa-solid fa-mosque"></i></span><span class="program-number">02</span><h3>Pembinaan Karakter</h3><p>Mengembangkan akhlak, kedisiplinan, dan kepedulian dalam keseharian.</p><a href="pages/akademik.html" aria-label="Lihat pembinaan karakter"><i class="fa-solid fa-arrow-right"></i></a></article>
+          <article class="program-card reveal"><span class="program-icon"><i class="fa-solid fa-lightbulb"></i></span><span class="program-number">03</span><h3>Minat & Bakat</h3><p>Ruang eksplorasi untuk menemukan dan mengembangkan potensi diri.</p><a href="pages/akademik.html" aria-label="Lihat minat dan bakat"><i class="fa-solid fa-arrow-right"></i></a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section principal-section">
+      <div class="container principal-grid">
+        <div class="principal-image reveal"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=85" alt="Foto ilustrasi kepala sekolah"><span class="image-caption">Kepala Madrasah</span></div>
+        <div class="principal-copy reveal"><span class="section-kicker">SAMBUTAN KEPALA MADRASAH</span><h2>Assalamu'alaikum <em>Warahmatullahi Wabarakatuh</em></h2><p class="section-description">Selamat datang di website resmi MA Az-Zahra. Website ini kami hadirkan sebagai jendela informasi dan komunikasi untuk mengenal lebih dekat lingkungan, program, serta berbagai kegiatan madrasah.</p><p class="section-description">Kami berkomitmen menciptakan lingkungan belajar yang positif agar setiap peserta didik dapat berkembang menjadi pribadi yang berilmu, berkarakter, dan bermanfaat bagi masyarakat.</p><div class="principal-sign"><strong>Nama Kepala Madrasah (Dummy)</strong><small>Kepala MA Az-Zahra</small></div></div>
+      </div>
+    </section>
+
+    <section class="section news-section">
+      <div class="container">
+        <div class="section-heading heading-with-action reveal"><div><span class="section-kicker">KABAR MADRASAH</span><h2>Berita & <em>Informasi Terbaru</em></h2><p class="section-description">Ikuti kabar, aktivitas, dan informasi terbaru dari lingkungan MA Az-Zahra.</p></div><a href="pages/berita.html" class="btn btn-outline-dark">Semua Berita <i class="fa-solid fa-arrow-right"></i></a></div>
+        <div class="news-grid" id="homeNewsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section gallery-preview-section">
+      <div class="container">
+        <div class="section-heading centered reveal"><span class="section-kicker">CERITA KAMI</span><h2>Momen Berharga <em>di Madrasah</em></h2><p class="section-description">Sekilas dokumentasi aktivitas dan kebersamaan warga madrasah.</p></div>
+        <div class="gallery-preview-grid">
+          <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=800&q=85" alt="Ilustrasi kegiatan siswa">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=85" alt="Ilustrasi siswa belajar bersama">
+          <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=85" alt="Ilustrasi kegiatan kelompok">
+          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=85" alt="Ilustrasi suasana kelas">
+        </div>
+        <div class="center-action"><a href="pages/galeri.html" class="text-link">Jelajahi galeri <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+    </section>
+
+    <section class="admission-cta">
+      <div class="container admission-inner">
+        <div><span class="section-kicker light-kicker">PENERIMAAN PESERTA DIDIK BARU</span><h2>Siap Memulai Perjalanan <em>Belajar Bersama Kami?</em></h2><p>Dapatkan informasi pendaftaran peserta didik baru MA Az-Zahra.</p></div>
+        <a href="pages/ppdb.html" class="btn btn-gold">Informasi PPDB <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="siteFooter">
+    <div class="container footer-main">
+      <div class="footer-brand"><a class="brand brand-light" href="index.html"><span class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></span><span class="brand-copy"><strong>MA AZ-ZAHRA</strong><small>Madrasah Aliyah</small></span></a><p>Membangun generasi berilmu, berkarakter, dan siap memberikan kontribusi positif bagi masyarakat.</p><div class="social-links"><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></div></div>
+      <div class="footer-column"><h4>Jelajahi</h4><a href="pages/profil.html">Profil Sekolah</a><a href="pages/akademik.html">Akademik</a><a href="pages/guru.html">Guru</a><a href="pages/galeri.html">Galeri</a></div>
+      <div class="footer-column"><h4>Informasi</h4><a href="pages/berita.html">Berita</a><a href="pages/ppdb.html">PPDB</a><a href="pages/kontak.html">Kontak</a></div>
+      <div class="footer-column footer-contact"><h4>Hubungi Kami</h4><p><i class="fa-solid fa-location-dot"></i> Alamat sekolah (data dummy), Indonesia</p><p><i class="fa-solid fa-phone"></i> +62 812-0000-0000</p><p><i class="fa-regular fa-envelope"></i> info@ma-azzahra.sch.id</p></div>
+    </div>
+    <div class="footer-bottom"><div class="container"><span>© <span id="currentYear"></span> MA Az-Zahra. Prototype website.</span><span>Dibuat dengan <i class="fa-solid fa-heart"></i> untuk pendidikan.</span></div></div>
+  </footer>
+
+  <a class="floating-whatsapp" href="https://wa.me/6281200000000?text=Halo%20MA%20Az-Zahra" target="_blank" rel="noopener" aria-label="Hubungi melalui WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/language.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

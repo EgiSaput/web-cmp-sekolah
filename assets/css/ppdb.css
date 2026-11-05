@@ -1,0 +1,2129 @@
+
+/* =========================================================
+   MA AZ-ZAHRA
+   PPDB PAGE STYLESHEET
+========================================================= */
+
+.ppdb-page {
+    --ppdb-navy: #12345a;
+    --ppdb-gold: #d5ad62;
+    --ppdb-gold-dark: #b1843f;
+
+    overflow-x: hidden;
+}
+
+.ppdb-page main {
+    overflow: hidden;
+}
+
+.ppdb-page .section-kicker {
+    display: block;
+    margin-bottom: 13px;
+
+    color: var(--ppdb-gold-dark);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.ppdb-page .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 15px 23px;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    transition: all .25s ease;
+}
+
+.ppdb-page .btn-gold {
+    background: var(--ppdb-gold);
+    color: #102c4b;
+}
+
+.ppdb-page .btn-gold:hover {
+    background: #e4c17d;
+    transform: translateY(-3px);
+}
+
+.ppdb-page .btn-outline-dark {
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    background: transparent;
+}
+
+.ppdb-page .btn-outline-dark:hover {
+    border-color: var(--ppdb-gold);
+    color: var(--ppdb-gold-dark);
+}
+
+.ppdb-section-heading {
+    max-width: 680px;
+    margin-bottom: 40px;
+}
+
+.ppdb-section-heading.centered {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.ppdb-section-heading h2 {
+    margin: 0 0 13px;
+
+    color: var(--color-text);
+    font-size: clamp(28px, 4vw, 39px);
+    line-height: 1.3;
+    letter-spacing: -1.3px;
+}
+
+.ppdb-section-heading h2 em {
+    color: var(--ppdb-gold-dark);
+    font-style: normal;
+}
+
+.ppdb-section-heading > p {
+    margin: 0;
+
+    color: var(--color-muted);
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   1. HERO
+========================================================= */
+
+.ppdb-hero {
+    position: relative;
+    min-height: 570px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1900&q=85")
+        center / cover no-repeat;
+
+    color: #fff;
+}
+
+.ppdb-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 24, 45, .97) 0%,
+            rgba(8, 35, 62, .91) 52%,
+            rgba(8, 35, 62, .69) 100%
+        );
+}
+
+.ppdb-hero-inner {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 60px;
+
+    padding-top: 65px;
+    padding-bottom: 95px;
+}
+
+.ppdb-hero-content {
+    max-width: 650px;
+}
+
+.ppdb-hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 24px;
+
+    color: var(--ppdb-gold);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+.hero-label-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+    background: var(--ppdb-gold);
+
+    box-shadow: 0 0 0 5px rgba(213, 173, 98, .15);
+}
+
+.ppdb-year {
+    display: block;
+    margin-bottom: 12px;
+
+    color: rgba(255,255,255,.75);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.ppdb-hero-content h1 {
+    margin: 0 0 20px;
+
+    color: #fff;
+    font-size: clamp(39px, 5.2vw, 61px);
+    line-height: 1.14;
+    letter-spacing: -2.5px;
+}
+
+.ppdb-hero-content h1 em {
+    color: var(--ppdb-gold);
+    font-style: normal;
+}
+
+.ppdb-hero-content > p {
+    max-width: 490px;
+    margin: 0;
+
+    color: rgba(255,255,255,.76);
+    font-size: 12px;
+    line-height: 2;
+}
+
+.ppdb-hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+
+    margin-top: 29px;
+}
+
+.ppdb-secondary-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+
+    transition: color .25s ease;
+}
+
+.ppdb-secondary-link:hover {
+    color: var(--ppdb-gold);
+}
+
+.ppdb-hero-trust {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    margin-top: 38px;
+
+    color: rgba(255,255,255,.72);
+    font-size: 10px;
+}
+
+.ppdb-trust-icon {
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(213,173,98,.5);
+    border-radius: 50%;
+
+    color: var(--ppdb-gold);
+}
+
+
+/* HERO IMAGE */
+
+.ppdb-hero-image {
+    position: relative;
+    max-width: 440px;
+    width: 100%;
+
+    justify-self: end;
+}
+
+.ppdb-image-main {
+    position: relative;
+    z-index: 1;
+
+    height: 370px;
+
+    overflow: hidden;
+
+    border: 7px solid rgba(255,255,255,.13);
+    border-radius: 150px 150px 15px 15px;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+
+.ppdb-image-main img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.ppdb-image-badge {
+    position: absolute;
+    z-index: 3;
+    bottom: 30px;
+    left: -45px;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 17px 20px;
+
+    border-radius: 10px;
+
+    background: #fff;
+    color: var(--ppdb-navy);
+
+    box-shadow: 0 12px 35px rgba(0,0,0,.2);
+}
+
+.ppdb-image-badge > i {
+    width: 39px;
+    height: 39px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 9px;
+
+    background: rgba(213,173,98,.2);
+    color: #9c702d;
+    font-size: 18px;
+}
+
+.ppdb-image-badge div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ppdb-image-badge strong {
+    font-size: 11px;
+}
+
+.ppdb-image-badge small {
+    color: #777;
+    font-size: 9px;
+}
+
+.ppdb-image-decoration {
+    position: absolute;
+    z-index: 0;
+    top: -19px;
+    right: -18px;
+
+    width: 120px;
+    height: 120px;
+
+    border-top: 2px solid var(--ppdb-gold);
+    border-right: 2px solid var(--ppdb-gold);
+    border-radius: 0 35px 0 0;
+}
+
+.ppdb-hero-bottom {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    padding: 15px 0;
+
+    border-top: 1px solid rgba(255,255,255,.16);
+    background: rgba(5,24,45,.35);
+}
+
+.ppdb-hero-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    color: rgba(255,255,255,.8);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.ppdb-hero-bottom i {
+    margin-right: 7px;
+    color: var(--ppdb-gold);
+}
+
+
+/* =========================================================
+   2. INFORMASI PENDAFTARAN
+========================================================= */
+
+.ppdb-info-section {
+    padding: 90px 0;
+
+    background: var(--color-bg);
+}
+
+.ppdb-info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    gap: 17px;
+}
+
+.ppdb-info-card {
+    padding: 25px 21px;
+
+    border: 1px solid var(--color-border);
+    border-radius: 11px;
+
+    background: var(--color-bg);
+
+    transition: all .25s ease;
+}
+
+.ppdb-info-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--ppdb-gold);
+    box-shadow: var(--shadow-soft);
+}
+
+.ppdb-info-icon {
+    width: 47px;
+    height: 47px;
+
+    display: grid;
+    place-items: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 11px;
+
+    background: rgba(213,173,98,.17);
+    color: var(--ppdb-gold-dark);
+    font-size: 19px;
+}
+
+.ppdb-info-card > span {
+    display: block;
+    margin-bottom: 9px;
+
+    color: var(--ppdb-gold-dark);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.ppdb-info-card h3 {
+    margin: 0 0 9px;
+
+    color: var(--color-text);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.ppdb-info-card p {
+    min-height: 54px;
+
+    margin: 0;
+
+    color: var(--color-muted);
+    font-size: 9px;
+    line-height: 1.8;
+}
+
+
+/* COUNTDOWN */
+
+.ppdb-countdown-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    margin-top: 32px;
+    padding: 29px 35px;
+
+    border-radius: 12px;
+
+    background: var(--ppdb-navy);
+    color: #fff;
+}
+
+.countdown-info > span {
+    color: var(--ppdb-gold);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.countdown-info h3 {
+    margin: 8px 0;
+
+    color: #fff;
+    font-size: 19px;
+}
+
+.countdown-info p {
+    margin: 0;
+
+    color: rgba(255,255,255,.7);
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.countdown-timer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.countdown-item {
+    min-width: 55px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.countdown-item strong {
+    color: var(--ppdb-gold);
+    font-size: 27px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+}
+
+.countdown-item span {
+    color: rgba(255,255,255,.7);
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.countdown-separator {
+    margin-top: -15px;
+
+    color: rgba(255,255,255,.45);
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   3. KEUNGGULAN
+========================================================= */
+
+.ppdb-benefit-section {
+    padding: 100px 0;
+
+    background: var(--color-bg-soft);
+}
+
+.ppdb-benefit-layout {
+    display: grid;
+    grid-template-columns: .95fr 1.05fr;
+    align-items: center;
+    gap: 75px;
+}
+
+.ppdb-benefit-image {
+    position: relative;
+    min-width: 0;
+}
+
+.ppdb-benefit-image > img {
+    width: 100%;
+    height: 500px;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 12px 100px 12px 12px;
+}
+
+.benefit-image-caption {
+    position: absolute;
+    right: -25px;
+    bottom: 35px;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 17px 21px;
+
+    border-radius: 9px;
+
+    background: var(--color-bg);
+    box-shadow: var(--shadow-soft);
+}
+
+.benefit-image-caption > i {
+    width: 39px;
+    height: 39px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 8px;
+
+    background: rgba(213,173,98,.2);
+    color: var(--ppdb-gold-dark);
+}
+
+.benefit-image-caption div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.benefit-image-caption strong {
+    color: var(--color-text);
+    font-size: 10px;
+}
+
+.benefit-image-caption small {
+    color: var(--color-muted);
+    font-size: 9px;
+}
+
+.ppdb-benefit-content h2 {
+    margin: 0 0 16px;
+
+    color: var(--color-text);
+    font-size: clamp(29px, 4vw, 40px);
+    line-height: 1.3;
+    letter-spacing: -1.4px;
+}
+
+.ppdb-benefit-content h2 em {
+    color: var(--ppdb-gold-dark);
+    font-style: normal;
+}
+
+.ppdb-benefit-content > p {
+    margin: 0;
+
+    color: var(--color-muted);
+    font-size: 11px;
+    line-height: 2;
+}
+
+.benefit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+
+    margin-top: 30px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.benefit-item > span {
+    width: 43px;
+    height: 43px;
+
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: rgba(213,173,98,.17);
+    color: var(--ppdb-gold-dark);
+    font-size: 17px;
+}
+
+.benefit-item h3 {
+    margin: 2px 0 6px;
+
+    color: var(--color-text);
+    font-size: 12px;
+}
+
+.benefit-item p {
+    margin: 0;
+
+    color: var(--color-muted);
+    font-size: 9px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   4. PERSYARATAN
+========================================================= */
+
+.ppdb-requirement-section {
+    padding: 95px 0;
+
+    background: var(--color-bg);
+}
+
+.ppdb-requirement-layout {
+    display: grid;
+    grid-template-columns: 1.3fr .7fr;
+    gap: 23px;
+
+    align-items: stretch;
+}
+
+.requirement-list-card,
+.requirement-note-card {
+    padding: 30px;
+
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+
+    background: var(--color-bg);
+}
+
+.requirement-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-bottom: 24px;
+}
+
+.requirement-card-heading > div:first-child {
+    width: 45px;
+    height: 45px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 10px;
+
+    background: rgba(213,173,98,.18);
+    color: var(--ppdb-gold-dark);
+    font-size: 18px;
+}
+
+.requirement-card-heading h3 {
+    margin: 0 0 5px;
+
+    color: var(--color-text);
+    font-size: 15px;
+}
+
+.requirement-card-heading p {
+    margin: 0;
+
+    color: var(--color-muted);
+    font-size: 9px;
+}
+
+.requirement-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.requirement-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid var(--color-border);
+
+    cursor: pointer;
+}
+
+.requirement-item:last-child {
+    border-bottom: 0;
+}
+
+.requirement-item input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.requirement-check {
+    width: 21px;
+    height: 21px;
+
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+
+    color: transparent;
+
+    font-size: 10px;
+
+    transition: all .2s ease;
+}
+
+.requirement-item input:checked + .requirement-check {
+    border-color: var(--ppdb-gold);
+    background: var(--ppdb-gold);
+    color: var(--ppdb-navy);
+}
+
+.requirement-item:has(input:focus-visible) .requirement-check {
+    outline: 2px solid var(--ppdb-gold-dark);
+    outline-offset: 3px;
+}
+
+.requirement-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.requirement-text strong {
+    color: var(--color-text);
+    font-size: 10px;
+}
+
+.requirement-text small {
+    color: var(--color-muted);
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+.requirement-progress {
+    margin-top: 20px;
+}
+
+.requirement-progress-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-bottom: 10px;
+
+    color: var(--color-muted);
+    font-size: 9px;
+}
+
+.requirement-progress-heading strong {
+    color: var(--ppdb-gold-dark);
+}
+
+.requirement-progress-track {
+    height: 7px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: var(--color-bg-soft);
+}
+
+.requirement-progress-track span {
+    display: block;
+
+    width: 0;
+    height: 100%;
+
+    border-radius: 20px;
+
+    background: var(--ppdb-gold);
+
+    transition: width .3s ease;
+}
+
+
+/* NOTE CARD */
+
+.requirement-note-card {
+    background: var(--color-bg-soft);
+}
+
+.requirement-note-icon {
+    width: 45px;
+    height: 45px;
+
+    display: grid;
+    place-items: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 10px;
+
+    background: rgba(213,173,98,.2);
+    color: var(--ppdb-gold-dark);
+    font-size: 19px;
+}
+
+.requirement-note-card h3 {
+    margin: 0 0 12px;
+
+    color: var(--color-text);
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.requirement-note-card > p {
+    margin: 0;
+
+    color: var(--color-muted);
+    font-size: 10px;
+    line-height: 1.9;
+}
+
+.requirement-note-card ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    margin: 25px 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.requirement-note-card li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    color: var(--color-text);
+    font-size: 9px;
+    line-height: 1.7;
+}
+
+.requirement-note-card li i {
+    margin-top: 2px;
+    color: var(--ppdb-gold-dark);
+}
+
+.requirement-note-card .btn {
+    width: 100%;
+}
+
+
+/* =========================================================
+   5. ALUR PENDAFTARAN
+========================================================= */
+
+.ppdb-process-section {
+    padding: 95px 0;
+
+    background: var(--color-bg-soft);
+}
+
+.ppdb-process-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0,1fr));
+    gap: 16px;
+}
+
+.ppdb-process-card {
+    position: relative;
+
+    padding: 25px 18px;
+
+    border: 1px solid var(--color-border);
+    border-radius: 11px;
+
+    background: var(--color-bg);
+
+    transition: all .25s ease;
+}
+
+.ppdb-process-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--ppdb-gold);
+}
+
+.process-number {
+    position: absolute;
+    top: 17px;
+    right: 17px;
+
+    color: rgba(213,173,98,.55);
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.process-icon {
+    width: 47px;
+    height: 47px;
+
+    display: grid;
+    place-items: center;
+
+    margin-bottom: 22px;
+
+    border-radius: 11px;
+
+    background: rgba(213,173,98,.18);
+    color: var(--ppdb-gold-dark);
+    font-size: 19px;
+}
+
+.ppdb-process-card h3 {
+    margin: 0 0 10px;
+
+    color: var(--color-text);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.ppdb-process-card p {
+    margin: 0;
+
+    color: var(--color-muted);
+    font-size: 9px;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   6. FORM PENDAFTARAN
+========================================================= */
+
+.ppdb-registration-section {
+    padding: 100px 0;
+
+    background: var(--color-bg);
+}
+
+.ppdb-registration-layout {
+    display: grid;
+    grid-template-columns: .7fr 1.3fr;
+    gap: 25px;
+
+    align-items: start;
+}
+
+
+/* SIDEBAR */
+
+.ppdb-registration-sidebar {
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background: var(--ppdb-navy);
+    color: #fff;
+}
+
+.registration-sidebar-top {
+    position: relative;
+
+    padding: 29px 25px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1c4872,
+            #102c4b
+        );
+}
+
+.registration-sidebar-top > span {
+    color: var(--ppdb-gold);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.registration-sidebar-top h3 {
+    margin: 13px 0 6px;
+
+    color: #fff;
+    font-size: 23px;
+}
+
+.registration-sidebar-top > p {
+    margin: 0;
+
+    color: rgba(255,255,255,.7);
+    font-size: 10px;
+}
+
+.registration-sidebar-icon {
+    position: absolute;
+    right: -10px;
+    bottom: -25px;
+
+    color: rgba(255,255,255,.09);
+    font-size: 115px;
+}
+
+.registration-sidebar-info {
+    padding: 27px 25px;
+}
+
+.registration-sidebar-info h4 {
+    margin: 0 0 24px;
+
+    color: var(--ppdb-gold);
+    font-size: 12px;
+}
+
+.sidebar-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+
+    margin-bottom: 21px;
+}
+
+.sidebar-step:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar-step > span {
+    width: 25px;
+    height: 25px;
+
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    border: 1px solid rgba(213,173,98,.6);
+    border-radius: 50%;
+
+    color: var(--ppdb-gold);
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.sidebar-step p {
+    margin: 3px 0 0;
+
+    color: rgba(255,255,255,.8);
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.registration-help {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+
+    margin: 0 17px 17px;
+    padding: 18px;
+
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 9px;
+
+    background: rgba(255,255,255,.06);
+}
+
+.registration-help > i {
+    margin-top: 3px;
+
+    color: var(--ppdb-gold);
+    font-size: 18px;
+}
+
+.registration-help strong {
+    color: #fff;
+    font-size: 10px;
+}
+
+.registration-help p {
+    margin: 7px 0;
+
+    color: rgba(255,255,255,.65);
+    font-size: 9px;
+    line-height: 1.7;
+}
+
+.registration-help a {
+    color: var(--ppdb-gold);
+    font-size: 9px;
+    font-weight: 800;
+}
+
+
+/* FORM CARD */
+
+.ppdb-form-card {
+    min-width: 0;
+
+    padding: 35px;
+
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+
+    background: var(--color-bg);
+
+    box-shadow: var(--shadow-soft);
+}
+
+.ppdb-form-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-bottom: 27px;
+    padding-bottom: 22px;
+
+    border-bottom: 1px solid var(--color-border);
+}
+
+.ppdb-form-top > div > span {
+    color: var(--ppdb-gold-dark);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.ppdb-form-top h3 {
+    margin: 8px 0 0;
+
+    color: var(--color-text);
+    font-size: 20px;
+}
+
+.required-note {
+    color: var(--color-muted);
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+.required-note b {
+    color: #d45c5c;
+}
+
+
+/* FORM SECTION TITLE */
+
+.form-section-title {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin: 30px 0 20px;
+}
+
+.form-section-title > span {
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    border-radius: 8px;
+
+    background: rgba(213,173,98,.18);
+    color: var(--ppdb-gold-dark);
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.form-section-title h4 {
+    margin: 0 0 4px;
+
+    color: var(--color-text);
+    font-size: 12px;
+}
+
+.form-section-title p {
+    margin: 0;
+
+    color: var(--color-muted);
+    font-size: 9px;
+}
+
+
+/* FORM GRID */
+
+.ppdb-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 17px;
+}
+
+.ppdb-field {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ppdb-field.full {
+    grid-column: 1 / -1;
+}
+
+.ppdb-field label {
+    color: var(--color-text);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.ppdb-field label b,
+.ppdb-agreement b {
+    color: #d45c5c;
+}
+
+.ppdb-field input,
+.ppdb-field select,
+.ppdb-field textarea {
+    width: 100%;
+    min-width: 0;
+
+    padding: 12px 13px;
+
+    border: 1px solid var(--color-border);
+    border-radius: 7px;
+    outline: none;
+
+    background: var(--color-bg);
+    color: var(--color-text);
+
+    font-family: inherit;
+    font-size: 10px;
+
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.ppdb-field input,
+.ppdb-field select {
+    min-height: 44px;
+}
+
+.ppdb-field textarea {
+    min-height: 90px;
+    resize: vertical;
+    line-height: 1.8;
+}
+
+.ppdb-field input::placeholder,
+.ppdb-field textarea::placeholder {
+    color: var(--color-muted);
+    opacity: .75;
+}
+
+.ppdb-field input:focus,
+.ppdb-field select:focus,
+.ppdb-field textarea:focus {
+    border-color: var(--ppdb-gold);
+    box-shadow: 0 0 0 3px rgba(213,173,98,.14);
+}
+
+.ppdb-field small {
+    color: var(--color-muted);
+    font-size: 8px;
+    line-height: 1.5;
+}
+
+.ppdb-field input:user-invalid,
+.ppdb-field select:user-invalid,
+.ppdb-field textarea:user-invalid {
+    border-color: #d45c5c;
+}
+
+
+/* AGREEMENT */
+
+.ppdb-agreement {
+    margin-top: 27px;
+    padding: 16px;
+
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+
+    background: var(--color-bg-soft);
+}
+
+.ppdb-agreement label {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+
+    cursor: pointer;
+}
+
+.ppdb-agreement input {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+
+    margin-top: 2px;
+
+    accent-color: var(--ppdb-gold-dark);
+}
+
+.ppdb-agreement span {
+    color: var(--color-muted);
+    font-size: 9px;
+    line-height: 1.8;
+}
+
+.ppdb-form-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    margin: 18px 0;
+}
+
+.ppdb-form-notice > i {
+    margin-top: 2px;
+
+    color: var(--ppdb-gold-dark);
+    font-size: 13px;
+}
+
+.ppdb-form-notice p {
+    margin: 0;
+
+    color: var(--color-muted);
+    font-size: 9px;
+    line-height: 1.8;
+}
+
+.ppdb-submit-btn {
+    width: 100%;
+    min-height: 49px;
+}
+
+.ppdb-form-error {
+    margin-top: 15px;
+    padding: 13px;
+
+    border: 1px solid #e6b1b1;
+    border-radius: 7px;
+
+    background: #fff0f0;
+    color: #a93636;
+
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.ppdb-form-error[hidden] {
+    display: none;
+}
+
+
+/* PREVIEW DATA */
+
+.ppdb-preview {
+    margin-top: 25px;
+    padding: 20px;
+
+    border: 1px solid rgba(213,173,98,.65);
+    border-radius: 10px;
+
+    background: var(--color-bg-soft);
+}
+
+.ppdb-preview[hidden] {
+    display: none;
+}
+
+.ppdb-preview-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.ppdb-preview-header > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--color-text);
+    font-size: 11px;
+}
+
+.ppdb-preview-header i {
+    color: #3b9c65;
+    font-size: 17px;
+}
+
+.ppdb-preview-header button {
+    width: 30px;
+    height: 30px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: var(--color-bg);
+    color: var(--color-text);
+
+    cursor: pointer;
+}
+
+.ppdb-preview > p {
+    margin: 12px 0 18px;
+
+    color: var(--color-muted);
+    font-size: 9px;
+    line-height: 1.8;
+}
+
+.ppdb-preview-group {
+    margin-bottom: 18px;
+}
+
+.ppdb-preview-group h4 {
+    margin: 0 0 10px;
+
+    color: var(--ppdb-gold-dark);
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.ppdb-preview-row {
+    display: grid;
+    grid-template-columns: 125px 1fr;
+    gap: 12px;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid var(--color-border);
+
+    font-size: 9px;
+    line-height: 1.6;
+}
+
+.ppdb-preview-row span:first-child {
+    color: var(--color-muted);
+}
+
+.ppdb-preview-row strong {
+    color: var(--color-text);
+    overflow-wrap: anywhere;
+}
+
+.ppdb-preview-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.ppdb-preview-actions .btn {
+    flex: 1;
+    min-width: 130px;
+}
+
+.ppdb-preview-actions .btn:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+
+/* =========================================================
+   7. FAQ
+========================================================= */
+
+.ppdb-faq-section {
+    padding: 95px 0;
+
+    background: var(--color-bg-soft);
+}
+
+.ppdb-faq-layout {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 75px;
+
+    align-items: start;
+}
+
+.ppdb-faq-heading h2 {
+    margin: 0 0 15px;
+
+    color: var(--color-text);
+    font-size: clamp(28px, 4vw, 38px);
+    line-height: 1.3;
+    letter-spacing: -1.3px;
+}
+
+.ppdb-faq-heading h2 em {
+    color: var(--ppdb-gold-dark);
+    font-style: normal;
+}
+
+.ppdb-faq-heading > p {
+    margin: 0;
+
+    color: var(--color-muted);
+    font-size: 10px;
+    line-height: 1.9;
+}
+
+.ppdb-faq-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin-top: 30px;
+
+    color: var(--color-muted);
+    font-size: 10px;
+}
+
+.ppdb-faq-contact span {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--ppdb-gold-dark);
+    font-weight: 800;
+}
+
+.ppdb-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ppdb-faq-item {
+    overflow: hidden;
+
+    border: 1px solid var(--color-border);
+    border-radius: 9px;
+
+    background: var(--color-bg);
+}
+
+.ppdb-faq-question {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 19px;
+
+    border: 0;
+    background: transparent;
+
+    color: var(--color-text);
+    text-align: left;
+
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.ppdb-faq-question i {
+    color: var(--ppdb-gold-dark);
+    transition: transform .25s ease;
+}
+
+.ppdb-faq-item.active .ppdb-faq-question i {
+    transform: rotate(45deg);
+}
+
+.ppdb-faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+
+    transition: grid-template-rows .25s ease;
+}
+
+.ppdb-faq-item.active .ppdb-faq-answer {
+    grid-template-rows: 1fr;
+}
+
+.ppdb-faq-answer p {
+    min-height: 0;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0 19px;
+
+    color: var(--color-muted);
+    font-size: 9px;
+    line-height: 1.9;
+
+    transition: padding .25s ease;
+}
+
+.ppdb-faq-item.active .ppdb-faq-answer p {
+    padding: 0 19px 19px;
+}
+
+
+/* =========================================================
+   8. CTA
+========================================================= */
+
+.ppdb-cta-section {
+    padding: 65px 0;
+
+    background: var(--ppdb-navy);
+}
+
+.ppdb-cta-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.ppdb-cta-content > div:first-child {
+    max-width: 650px;
+}
+
+.ppdb-cta-content > div:first-child > span {
+    color: var(--ppdb-gold);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.ppdb-cta-content h2 {
+    margin: 13px 0;
+
+    color: #fff;
+    font-size: clamp(25px, 3.5vw, 36px);
+    line-height: 1.3;
+}
+
+.ppdb-cta-content p {
+    margin: 0;
+
+    color: rgba(255,255,255,.7);
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+.ppdb-cta-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 13px;
+
+    flex-shrink: 0;
+}
+
+.ppdb-cta-whatsapp {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+
+    padding: 13px 20px;
+
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 8px;
+
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+
+    transition: all .25s ease;
+}
+
+.ppdb-cta-whatsapp:hover {
+    border-color: var(--ppdb-gold);
+    color: var(--ppdb-gold);
+}
+
+
+/* =========================================================
+   9. DARK MODE
+========================================================= */
+
+[data-theme="dark"] .ppdb-info-card,
+[data-theme="dark"] .ppdb-process-card,
+[data-theme="dark"] .requirement-list-card,
+[data-theme="dark"] .ppdb-form-card,
+[data-theme="dark"] .ppdb-faq-item {
+    background: var(--color-bg);
+}
+
+[data-theme="dark"] .ppdb-info-card h3,
+[data-theme="dark"] .ppdb-process-card h3,
+[data-theme="dark"] .requirement-text strong,
+[data-theme="dark"] .requirement-card-heading h3,
+[data-theme="dark"] .ppdb-form-top h3,
+[data-theme="dark"] .form-section-title h4 {
+    color: var(--color-text);
+}
+
+[data-theme="dark"] .ppdb-form-error {
+    background: #422426;
+    border-color: #804447;
+    color: #ffc0c0;
+}
+
+[data-theme="dark"] .ppdb-field input,
+[data-theme="dark"] .ppdb-field select,
+[data-theme="dark"] .ppdb-field textarea {
+    color-scheme: dark;
+}
+
+
+/* =========================================================
+   10. RESPONSIVE TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .ppdb-hero-inner {
+        gap: 30px;
+    }
+
+    .ppdb-hero-image {
+        max-width: 350px;
+    }
+
+    .ppdb-image-main {
+        height: 330px;
+    }
+
+    .ppdb-info-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+    }
+
+    .ppdb-process-grid {
+        grid-template-columns: repeat(3, minmax(0,1fr));
+    }
+
+    .ppdb-benefit-layout {
+        gap: 45px;
+    }
+
+    .ppdb-faq-layout {
+        gap: 40px;
+    }
+
+}
+
+
+/* =========================================================
+   11. RESPONSIVE MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .ppdb-hero {
+        min-height: auto;
+    }
+
+    .ppdb-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+
+        padding-top: 65px;
+        padding-bottom: 100px;
+    }
+
+    .ppdb-hero-content h1 {
+        font-size: clamp(37px, 10vw, 52px);
+        letter-spacing: -1.7px;
+    }
+
+    .ppdb-hero-content > p {
+        font-size: 11px;
+    }
+
+    .ppdb-hero-image {
+        width: min(85%, 350px);
+        justify-self: center;
+    }
+
+    .ppdb-image-main {
+        height: 290px;
+    }
+
+    .ppdb-image-badge {
+        left: -20px;
+        bottom: 20px;
+        padding: 13px;
+    }
+
+    .ppdb-image-decoration {
+        width: 80px;
+        height: 80px;
+    }
+
+    .ppdb-hero-bottom .container {
+        font-size: 8px;
+    }
+
+    .ppdb-info-section,
+    .ppdb-benefit-section,
+    .ppdb-requirement-section,
+    .ppdb-process-section,
+    .ppdb-registration-section,
+    .ppdb-faq-section {
+        padding: 70px 0;
+    }
+
+    .ppdb-section-heading {
+        margin-bottom: 30px;
+    }
+
+    .ppdb-section-heading h2 {
+        font-size: 29px;
+    }
+
+    .ppdb-info-grid {
+        gap: 12px;
+    }
+
+    .ppdb-info-card {
+        padding: 19px 15px;
+    }
+
+    .ppdb-info-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 14px;
+        font-size: 16px;
+    }
+
+    .ppdb-info-card h3 {
+        font-size: 12px;
+    }
+
+    .ppdb-info-card p {
+        min-height: 65px;
+        font-size: 9px;
+    }
+
+    .ppdb-countdown-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+
+        padding: 24px 20px;
+    }
+
+    .countdown-timer {
+        width: 100%;
+        justify-content: space-between;
+        gap: 5px;
+    }
+
+    .countdown-item {
+        min-width: 0;
+    }
+
+    .countdown-item strong {
+        font-size: 23px;
+    }
+
+    .countdown-separator {
+        font-size: 15px;
+    }
+
+    .ppdb-benefit-layout {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .ppdb-benefit-image > img {
+        height: 340px;
+        border-radius: 12px 75px 12px 12px;
+    }
+
+    .benefit-image-caption {
+        right: -5px;
+        bottom: 20px;
+    }
+
+    .ppdb-benefit-content h2 {
+        font-size: 32px;
+    }
+
+    .ppdb-requirement-layout {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .requirement-list-card,
+    .requirement-note-card {
+        padding: 22px 18px;
+    }
+
+    .ppdb-process-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+        gap: 12px;
+    }
+
+    .ppdb-process-card {
+        padding: 20px 15px;
+    }
+
+    .ppdb-process-card h3 {
+        font-size: 11px;
+    }
+
+    .ppdb-registration-layout {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .registration-sidebar-info {
+        padding: 22px;
+    }
+
+    .registration-help {
+        margin: 0 12px 12px;
+    }
+
+    .ppdb-form-card {
+        padding: 24px 18px;
+    }
+
+    .ppdb-form-top {
+        align-items: flex-start;
+    }
+
+    .ppdb-form-top h3 {
+        font-size: 17px;
+    }
+
+    .ppdb-form-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .ppdb-field.full {
+        grid-column: auto;
+    }
+
+    .ppdb-preview-row {
+        grid-template-columns: 105px 1fr;
+    }
+
+    .ppdb-preview-actions {
+        flex-direction: column;
+    }
+
+    .ppdb-preview-actions .btn {
+        width: 100%;
+    }
+
+    .ppdb-faq-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .ppdb-faq-heading h2 {
+        font-size: 30px;
+    }
+
+    .ppdb-cta-content {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .ppdb-cta-actions {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .ppdb-cta-actions .btn,
+    .ppdb-cta-whatsapp {
+        flex: 1;
+        min-width: 135px;
+    }
+
+}
+
+
+/* =========================================================
+   12. SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .ppdb-hero-content h1 {
+        font-size: 36px;
+    }
+
+    .ppdb-hero-actions {
+        gap: 15px;
+    }
+
+    .ppdb-hero-actions .btn {
+        padding: 13px 15px;
+    }
+
+    .ppdb-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ppdb-info-card p {
+        min-height: auto;
+    }
+
+    .ppdb-process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ppdb-form-card {
+        padding: 20px 14px;
+    }
+
+    .required-note {
+        font-size: 8px;
+    }
+
+    .countdown-item strong {
+        font-size: 19px;
+    }
+
+}
+
+
+/* =========================================================
+   13. ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ppdb-page *,
+    .ppdb-page *::before,
+    .ppdb-page *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+    }
+
+}

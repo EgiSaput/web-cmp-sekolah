@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detail informasi dan berita MA Az-Zahra.">
+    <title>Detail Informasi | MA Az-Zahra</title>
+
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="announcement-bar">
+        <div class="container">
+            <span><i class="fa-solid fa-bullhorn"></i> Informasi resmi MA Az-Zahra</span>
+            <span class="announcement-right">Berilmu, Berkarakter, Berprestasi</span>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="../index.html" class="brand">
+                <span class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></span>
+                <span class="brand-text">
+                    <strong>MA AZ-ZAHRA</strong>
+                    <small>Madrasah Aliyah</small>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <a href="../index.html">Beranda</a>
+                <a href="profil.html">Profil</a>
+                <a href="akademik.html">Akademik</a>
+                <a href="guru.html">Guru</a>
+                <a href="berita.html" class="active">Informasi</a>
+                <a href="galeri.html">Galeri</a>
+                <a href="ppdb.html" class="nav-ppdb">PPDB <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="kontak.html" class="nav-contact">Kontak</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="icon-button" id="themeToggle" aria-label="Ganti tema">
+                    <i class="fa-regular fa-moon"></i>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Buka menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="article-page">
+        <div class="container">
+            <div class="article-breadcrumb">
+                <a href="../index.html">Beranda</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="berita.html">Informasi</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>Detail Berita</span>
+            </div>
+
+            <div class="article-layout">
+                <article class="article-main" id="articleContent">
+                    <div class="article-heading">
+                        <span class="article-category" id="articleCategory">Informasi</span>
+                        <h1 id="articleTitle">Memuat informasi...</h1>
+                        <div class="article-meta">
+                            <span><i class="fa-regular fa-calendar"></i> <span id="articleDate">-</span></span>
+                            <span><i class="fa-regular fa-user"></i> Admin MA Az-Zahra</span>
+                        </div>
+                    </div>
+
+                    <div class="article-cover">
+                        <img id="articleImage" src="" alt="Gambar berita">
+                    </div>
+
+                    <div class="article-body" id="articleBody"></div>
+
+                    <div class="article-share">
+                        <span>Bagikan informasi:</span>
+                        <button type="button" id="shareWhatsApp" aria-label="Bagikan ke WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </button>
+                        <button type="button" id="copyArticleLink" aria-label="Salin tautan">
+                            <i class="fa-solid fa-link"></i>
+                        </button>
+                    </div>
+
+                    <a href="berita.html" class="article-back">
+                        <i class="fa-solid fa-arrow-left"></i> Kembali ke Informasi
+                    </a>
+                </article>
+
+                <aside class="article-sidebar">
+                    <div class="article-sidebar-card">
+                        <span class="section-kicker">INFORMASI MADRASAH</span>
+                        <h3>Terhubung dengan MA Az-Zahra</h3>
+                        <p>Temukan informasi lain seputar kegiatan dan perkembangan madrasah.</p>
+                        <a href="berita.html" class="news-read-more">Lihat semua berita <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="article-sidebar-card article-contact-card">
+                        <i class="fa-solid fa-comments"></i>
+                        <h3>Ada Pertanyaan?</h3>
+                        <p>Hubungi pihak madrasah untuk mendapatkan informasi lebih lanjut.</p>
+                        <a href="kontak.html" class="btn btn-gold">Hubungi Kami</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 MA Az-Zahra. Seluruh hak cipta dilindungi.</p>
+                <a href="../index.html">Kembali ke Beranda <i class="fa-solid fa-arrow-up"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></a>
+    <a href="https://wa.me/6281234567890" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/language.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/berita.js"></script>
+</body>
+</html>

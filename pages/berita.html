@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Informasi, berita, kegiatan, dan pengumuman terbaru MA Az-Zahra.">
+    <title>Informasi & Berita | MA Az-Zahra</title>
+
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="announcement-bar">
+        <div class="container">
+            <span><i class="fa-solid fa-bullhorn"></i> Selamat datang di website resmi MA Az-Zahra</span>
+            <span class="announcement-right">Membangun Generasi Berilmu dan Berakhlak</span>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="../index.html" class="brand">
+                <span class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></span>
+                <span class="brand-text">
+                    <strong>MA AZ-ZAHRA</strong>
+                    <small>Madrasah Aliyah</small>
+                </span>
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <a href="../index.html">Beranda</a>
+                <a href="profil.html">Profil</a>
+                <a href="akademik.html">Akademik</a>
+                <a href="guru.html">Guru</a>
+                <a href="berita.html" class="active">Informasi</a>
+                <a href="galeri.html">Galeri</a>
+                <a href="ppdb.html" class="nav-ppdb">PPDB <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="kontak.html" class="nav-contact">Kontak</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="icon-button" id="themeToggle" aria-label="Ganti tema">
+                    <i class="fa-regular fa-moon"></i>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Buka menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="news-page">
+
+        <!-- HERO -->
+        <section class="news-hero">
+            <div class="container news-hero-inner">
+                <div class="news-hero-content reveal">
+                    <span class="eyebrow"><span></span> KABAR DAN INFORMASI MADRASAH</span>
+                    <h1>Setiap Cerita Punya <em>Makna.</em></h1>
+                    <p>
+                        Ikuti perkembangan, kegiatan, prestasi, dan berbagai informasi
+                        terbaru dari keluarga besar MA Az-Zahra.
+                    </p>
+                    <a href="#daftar-berita" class="btn btn-gold">
+                        Jelajahi Informasi <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                </div>
+
+                <div class="news-hero-decoration">
+                    <div class="news-decoration-circle"></div>
+                    <i class="fa-regular fa-newspaper"></i>
+                    <span>AZ-ZAHRA<br>UPDATE</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED NEWS -->
+        <section class="section featured-news-section">
+            <div class="container">
+                <div class="section-heading news-section-heading reveal">
+                    <div>
+                        <span class="section-kicker">SOROTAN MADRASAH</span>
+                        <h2>Informasi <em>Pilihan</em></h2>
+                    </div>
+                    <span class="news-heading-note">Cerita terbaru dari MA Az-Zahra</span>
+                </div>
+
+                <article class="featured-news-card reveal">
+                    <a href="detail-berita.html?id=1" class="featured-news-image">
+                        <img src="../images/1.jpeg"
+                             alt="Kegiatan pendidikan di lingkungan sekolah">
+                        <span class="featured-label">BERITA UTAMA</span>
+                    </a>
+
+                    <div class="featured-news-content">
+                        <div class="news-meta">
+                            <span><i class="fa-regular fa-calendar"></i> 05 November 2026</span>
+                            <span class="news-category">Kegiatan</span>
+                        </div>
+                        <h3>
+                            <a href="detail-berita.html?id=1">
+                                Membangun Semangat Belajar dan Kebersamaan di Lingkungan Madrasah
+                            </a>
+                        </h3>
+                        <p>
+                            Lingkungan pendidikan yang positif menjadi bagian penting dalam
+                            membentuk peserta didik yang aktif, berkarakter, dan siap
+                            menghadapi masa depan.
+                        </p>
+                        <a href="detail-berita.html?id=1" class="news-read-more">
+                            Baca selengkapnya <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- NEWS LIST -->
+        <section class="section news-list-section" id="daftar-berita">
+            <div class="container">
+                <div class="section-heading news-section-heading reveal">
+                    <div>
+                        <span class="section-kicker">KABAR TERKINI</span>
+                        <h2>Berita & <em>Informasi</em></h2>
+                        <p class="section-description">
+                            Temukan berbagai kabar dan informasi seputar aktivitas madrasah.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="news-toolbar reveal">
+                    <div class="news-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search" id="newsSearch"
+                               placeholder="Cari berita atau informasi..."
+                               aria-label="Cari berita">
+                        <button type="button" id="clearNewsSearch" aria-label="Hapus pencarian">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+
+                    <div class="news-filter" id="newsFilters">
+                        <button class="news-filter-btn active" data-category="all">Semua</button>
+                        <button class="news-filter-btn" data-category="akademik">Akademik</button>
+                        <button class="news-filter-btn" data-category="kegiatan">Kegiatan</button>
+                        <button class="news-filter-btn" data-category="prestasi">Prestasi</button>
+                        <button class="news-filter-btn" data-category="pengumuman">Pengumuman</button>
+                    </div>
+                </div>
+
+                <div class="news-result-info">
+                    <span id="newsResultCount">Menampilkan 6 informasi</span>
+                    <span>Informasi MA Az-Zahra</span>
+                </div>
+
+                <div class="news-grid" id="newsGrid">
+
+                    <article class="news-card reveal" data-category="akademik"
+                             data-search="pembelajaran kreatif akademik siswa kelas">
+                        <a href="detail-berita.html?id=2" class="news-card-image">
+                            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80"
+                                 alt="Suasana pembelajaran di kelas">
+                            <span>Akademik</span>
+                        </a>
+                        <div class="news-card-content">
+                            <div class="news-meta">
+                                <span><i class="fa-regular fa-calendar"></i> 03 November 2026</span>
+                            </div>
+                            <h3><a href="detail-berita.html?id=2">Menciptakan Pembelajaran Kreatif dan Menyenangkan</a></h3>
+                            <p>Mendorong suasana belajar yang aktif melalui pendekatan pembelajaran yang kreatif dan interaktif.</p>
+                            <a href="detail-berita.html?id=2" class="news-read-more">Baca selengkapnya <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="news-card reveal" data-category="kegiatan"
+                             data-search="kegiatan sekolah kebersamaan siswa lingkungan">
+                        <a href="detail-berita.html?id=3" class="news-card-image">
+                            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=900&q=80"
+                                 alt="Kegiatan kebersamaan">
+                            <span>Kegiatan</span>
+                        </a>
+                        <div class="news-card-content">
+                            <div class="news-meta">
+                                <span><i class="fa-regular fa-calendar"></i> 30 Oktober 2026</span>
+                            </div>
+                            <h3><a href="detail-berita.html?id=3">Mempererat Kebersamaan Melalui Kegiatan Madrasah</a></h3>
+                            <p>Berbagai aktivitas bersama menjadi sarana membangun kepedulian, kerja sama, dan rasa kekeluargaan.</p>
+                            <a href="detail-berita.html?id=3" class="news-read-more">Baca selengkapnya <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="news-card reveal" data-category="prestasi"
+                             data-search="prestasi penghargaan kompetisi siswa lomba">
+                        <a href="detail-berita.html?id=4" class="news-card-image">
+                            <img src="https://images.unsplash.com/photo-1560785496-3c9d27877182?auto=format&fit=crop&w=900&q=80"
+                                 alt="Penghargaan dan prestasi">
+                            <span>Prestasi</span>
+                        </a>
+                        <div class="news-card-content">
+                            <div class="news-meta">
+                                <span><i class="fa-regular fa-calendar"></i> 25 Oktober 2026</span>
+                            </div>
+                            <h3><a href="detail-berita.html?id=4">Mengapresiasi Semangat dan Potensi Peserta Didik</a></h3>
+                            <p>Pengembangan potensi peserta didik menjadi bagian dari upaya membangun generasi yang percaya diri.</p>
+                            <a href="detail-berita.html?id=4" class="news-read-more">Baca selengkapnya <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="news-card reveal" data-category="pengumuman"
+                             data-search="pengumuman informasi jadwal kegiatan madrasah">
+                        <a href="detail-berita.html?id=5" class="news-card-image">
+                            <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=900&q=80"
+                                 alt="Agenda dan jadwal kegiatan">
+                            <span>Pengumuman</span>
+                        </a>
+                        <div class="news-card-content">
+                            <div class="news-meta">
+                                <span><i class="fa-regular fa-calendar"></i> 20 Oktober 2026</span>
+                            </div>
+                            <h3><a href="detail-berita.html?id=5">Informasi Agenda Kegiatan Madrasah</a></h3>
+                            <p>Simak informasi agenda dan kegiatan madrasah agar seluruh warga sekolah dapat mempersiapkan diri.</p>
+                            <a href="detail-berita.html?id=5" class="news-read-more">Baca selengkapnya <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="news-card reveal" data-category="akademik"
+                             data-search="literasi membaca buku pengetahuan pendidikan">
+                        <a href="detail-berita.html?id=6" class="news-card-image">
+                            <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=80"
+                                 alt="Perpustakaan dan literasi">
+                            <span>Akademik</span>
+                        </a>
+                        <div class="news-card-content">
+                            <div class="news-meta">
+                                <span><i class="fa-regular fa-calendar"></i> 15 Oktober 2026</span>
+                            </div>
+                            <h3><a href="detail-berita.html?id=6">Menumbuhkan Budaya Literasi di Lingkungan Sekolah</a></h3>
+                            <p>Literasi membantu peserta didik memperluas wawasan, meningkatkan daya pikir, dan menumbuhkan rasa ingin tahu.</p>
+                            <a href="detail-berita.html?id=6" class="news-read-more">Baca selengkapnya <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="news-empty" id="newsEmpty" hidden>
+                    <i class="fa-regular fa-folder-open"></i>
+                    <h3>Informasi tidak ditemukan</h3>
+                    <p>Coba gunakan kata kunci atau kategori yang berbeda.</p>
+                    <button type="button" class="btn btn-gold" id="resetNewsFilter">Tampilkan Semua</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="news-subscribe-section">
+            <div class="container">
+                <div class="news-subscribe-card reveal">
+                    <div>
+                        <span class="section-kicker">TETAP TERHUBUNG</span>
+                        <h2>Jangan Lewatkan Informasi <em>Terbaru.</em></h2>
+                        <p>Kunjungi halaman ini secara berkala untuk mengikuti kabar terbaru MA Az-Zahra.</p>
+                    </div>
+                    <a href="kontak.html" class="btn btn-gold">
+                        Hubungi Madrasah <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 MA Az-Zahra. Seluruh hak cipta dilindungi.</p>
+                <a href="../index.html">Kembali ke Beranda <i class="fa-solid fa-arrow-up"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></a>
+    <a href="https://wa.me/6281234567890" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/language.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/berita.js"></script>
+</body>
+</html>
