@@ -161,3 +161,25 @@
         transition-duration: .01ms !important;
     }
 }
+
+
+/* Improve contrast on the editorial/news hero, whose light gradient is
+   intentionally fixed in the original light theme. */
+:root[data-theme="dark"] .news-hero {
+    background:
+        radial-gradient(circle at 85% 20%, rgba(213,173,98,.10), transparent 28%),
+        linear-gradient(120deg, #152438 0%, #101b2a 70%);
+    border-color: var(--color-border);
+}
+:root[data-theme="dark"] .news-hero h1,
+:root[data-theme="dark"] .news-section-heading h2,
+:root[data-theme="dark"] .news-subscribe-card h2 {
+    color: var(--color-text);
+}
+:root[data-theme="dark"] .news-hero-content > p,
+:root[data-theme="dark"] .news-heading-note {
+    color: var(--color-muted);
+}
+:root[data-theme="dark"] .news-hero-decoration > span {
+    color: #d5ad62;
+}

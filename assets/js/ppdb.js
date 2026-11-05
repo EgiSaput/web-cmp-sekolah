@@ -1,810 +1,105 @@
-
-/* =========================================================
-   MA AZ-ZAHRA
-   PPDB PAGE JAVASCRIPT
-========================================================= */
-
 document.addEventListener("DOMContentLoaded", () => {
-
-    initPPDBCountdown();
-
-    initRequirementChecklist();
-
-    initPPDBForm();
-
-    initPPDBFAQ();
-
-    initPPDBWhatsApp();
-
-    initPPDBYear();
-
-});
-
-
-/* =========================================================
-   1. KONFIGURASI
-========================================================= */
-
-const PPDB_CONFIG = {
-
-    whatsappNumber:
-        window.SITE_CONFIG?.whatsappNumber || "6281200000000",
-
-    admissionDate:
-        window.SITE_CONFIG?.admissionDate || "2027-06-01T00:00:00+07:00"
-
-};
-
-
-/* =========================================================
-   2. COUNTDOWN PENDAFTARAN
-========================================================= */
-
-function initPPDBCountdown() {
-
-    const daysElement = document.getElementById("countdownDays");
-
-    if (!daysElement) return;
-
-
-    const deadline = new Date(PPDB_CONFIG.admissionDate);
-
-
-    if (Number.isNaN(deadline.getTime())) {
-
-        daysElement.textContent = "--";
-
-        return;
-
-    }
-
-
-    const hoursElement = document.getElementById("countdownHours");
-
-    const minutesElement = document.getElementById("countdownMinutes");
-
-    const secondsElement = document.getElementById("countdownSeconds");
-
-
-    function updateCountdown() {
-
-        const now = Date.now();
-
-        const distance = deadline.getTime() - now;
-
-
-        if (distance <= 0) {
-
-            daysElement.textContent = "00";
-
-            hoursElement.textContent = "00";
-
-            minutesElement.textContent = "00";
-
-            secondsElement.textContent = "00";
-
-
-            const heading = document.querySelector(".countdown-info h3");
-
-            if (heading) {
-
-                heading.textContent = "Periode Pendaftaran Telah Berakhir";
-
-            }
-
-            return;
-
-        }
-
-
-        const days = Math.floor(
-            distance / (1000 * 60 * 60 * 24)
-        );
-
-        const hours = Math.floor(
-            (distance / (1000 * 60 * 60)) % 24
-        );
-
-        const minutes = Math.floor(
-            (distance / (1000 * 60)) % 60
-        );
-
-        const seconds = Math.floor(
-            (distance / 1000) % 60
-        );
-
-
-        daysElement.textContent = String(days).padStart(2, "0");
-
-        hoursElement.textContent = String(hours).padStart(2, "0");
-
-        minutesElement.textContent = String(minutes).padStart(2, "0");
-
-        secondsElement.textContent = String(seconds).padStart(2, "0");
-
-    }
-
-
-    updateCountdown();
-
-    setInterval(updateCountdown, 1000);
-
-}
-
-
-/* =========================================================
-   3. CHECKLIST PERSYARATAN
-========================================================= */
-
-function initRequirementChecklist() {
-
-    const checkboxes = document.querySelectorAll(
-        ".requirement-item input[type='checkbox']"
-    );
-
-    const progressBar = document.getElementById(
-        "requirementProgressBar"
-    );
-
-    const progressText = document.getElementById(
-        "requirementProgressText"
-    );
-
-
-    if (!checkboxes.length) return;
-
-
-    function updateProgress() {
-
-        const total = checkboxes.length;
-
-        const checked = [...checkboxes].filter(
-            checkbox => checkbox.checked
-        ).length;
-
-
-        const percentage = (checked / total) * 100;
-
-
-        if (progressBar) {
-
-            progressBar.style.width = `${percentage}%`;
-
-        }
-
-
-        if (progressText) {
-
-            progressText.textContent = `${checked} / ${total}`;
-
-        }
-
-    }
-
-
-    checkboxes.forEach(checkbox => {
-
-        checkbox.addEventListener("change", updateProgress);
-
+  const cfg = window.SITE_CONFIG || {};
+  const phone = cfg.whatsappNumber || "6281200000000";
+  const deadline = new Date(cfg.admissionDate || "2027-06-01T00:00:00+07:00");
+  const $ = id => document.getElementById(id);
+
+  // Countdown
+  function countdown() {
+    const distance = deadline.getTime() - Date.now();
+    const values = distance > 0 ? [
+      Math.floor(distance / 86400000),
+      Math.floor(distance / 3600000) % 24,
+      Math.floor(distance / 60000) % 60,
+      Math.floor(distance / 1000) % 60
+    ] : [0,0,0,0];
+    ["countdownDays","countdownHours","countdownMinutes","countdownSeconds"].forEach((id,i) => {
+      if ($(id)) $(id).textContent = String(values[i]).padStart(2,"0");
     });
-
-
-    updateProgress();
-
-}
-
-
-/* =========================================================
-   4. FORM PENDAFTARAN
-========================================================= */
-
-function initPPDBForm() {
-
-    const form = document.getElementById("ppdbForm");
-
-    if (!form) return;
-
-
-    const preview = document.getElementById("ppdbPreview");
-
-    const previewContent = document.getElementById(
-        "ppdbPreviewContent"
-    );
-
-    const errorBox = document.getElementById("ppdbFormError");
-
-    const sendButton = document.getElementById("sendPpdbData");
-
-    const editButton = document.getElementById("editPpdbData");
-
-    const closeButton = document.getElementById("closePreview");
-
-
-    let registrationData = null;
-
-
-    // AMBIL NILAI FORM
-    function getFormData() {
-
-        return {
-
-            studentName: getValue("studentName"),
-
-            nisn: getValue("studentNisn") || "-",
-
-            gender: getValue("studentGender"),
-
-            birthPlace: getValue("birthPlace"),
-
-            birthDate: getValue("birthDate"),
-
-            religion: getValue("religion"),
-
-            originSchool: getValue("originSchool"),
-
-            address: getValue("studentAddress"),
-
-            parentName: getValue("parentName"),
-
-            parentPhone: getValue("parentPhone"),
-
-            parentEmail: getValue("parentEmail") || "-",
-
-            registrationPath: getValue("registrationPath"),
-
-            source: getValue("registrationSource") || "-"
-
-        };
-
-    }
-
-
-    function getValue(id) {
-
-        return document.getElementById(id)?.value.trim() || "";
-
-    }
-
-
-    // VALIDASI NOMOR TELEPON
-    function validatePhone(phone) {
-
-        const cleaned = phone.replace(/[\s\-+()]/g, "");
-
-        return /^0?8[0-9]{8,12}$/.test(cleaned);
-
-    }
-
-
-    // FORMAT TANGGAL
-    function formatDate(dateString) {
-
-        if (!dateString) return "-";
-
-
-        const date = new Date(`${dateString}T00:00:00`);
-
-        if (Number.isNaN(date.getTime())) return dateString;
-
-
-        return date.toLocaleDateString("id-ID", {
-
-            day: "2-digit",
-
-            month: "long",
-
-            year: "numeric"
-
-        });
-
-    }
-
-
-    // TAMPILKAN ERROR
-    function showError(message) {
-
-        errorBox.textContent = message;
-
-        errorBox.hidden = false;
-
-        errorBox.scrollIntoView({
-
-            behavior: "smooth",
-
-            block: "nearest"
-
-        });
-
-    }
-
-
-    function hideError() {
-
-        errorBox.hidden = true;
-
-        errorBox.textContent = "";
-
-    }
-
-
-    // VALIDASI FORM
-    function validateForm() {
-
-        hideError();
-
-
-        if (!form.checkValidity()) {
-
-            form.reportValidity();
-
-            return false;
-
-        }
-
-
-        const data = getFormData();
-
-
-        if (data.studentName.length < 3) {
-
-            showError("Nama calon siswa minimal 3 karakter.");
-
-            return false;
-
-        }
-
-
-        if (data.nisn !== "-" && !/^\d{10}$/.test(data.nisn)) {
-
-            showError("NISN harus terdiri dari 10 angka.");
-
-            document.getElementById("studentNisn").focus();
-
-            return false;
-
-        }
-
-
-        if (!validatePhone(data.parentPhone)) {
-
-            showError(
-                "Nomor WhatsApp orang tua tidak valid. Contoh: 081234567890."
-            );
-
-            document.getElementById("parentPhone").focus();
-
-            return false;
-
-        }
-
-
-        if (data.birthDate) {
-
-            const birthDate = new Date(
-                `${data.birthDate}T00:00:00`
-            );
-
-            if (birthDate >= new Date()) {
-
-                showError(
-                    "Tanggal lahir harus lebih awal dari hari ini."
-                );
-
-                document.getElementById("birthDate").focus();
-
-                return false;
-
-            }
-
-        }
-
-
-        const whatsappNumber = PPDB_CONFIG.whatsappNumber;
-
-
-        if (!/^\d{10,15}$/.test(whatsappNumber)) {
-
-            showError(
-                "Nomor WhatsApp panitia belum dikonfigurasi dengan benar."
-            );
-
-            return false;
-
-        }
-
-
-        return true;
-
-    }
-
-
-    // MEMBUAT ELEMEN PREVIEW
-    function createPreviewRow(label, value) {
-
-        const row = document.createElement("div");
-
-        row.className = "ppdb-preview-row";
-
-
-        const labelElement = document.createElement("span");
-
-        labelElement.textContent = label;
-
-
-        const valueElement = document.createElement("strong");
-
-        valueElement.textContent = value || "-";
-
-
-        row.append(labelElement, valueElement);
-
-        return row;
-
-    }
-
-
-    // RENDER RINGKASAN
-    function renderPreview(data) {
-
-        previewContent.replaceChildren();
-
-
-        const sections = [
-
-            {
-
-                title: "Identitas Calon Siswa",
-
-                items: [
-
-                    ["Nama Lengkap", data.studentName],
-
-                    ["NISN", data.nisn],
-
-                    ["Jenis Kelamin", data.gender],
-
-                    ["Tempat Lahir", data.birthPlace],
-
-                    ["Tanggal Lahir", formatDate(data.birthDate)],
-
-                    ["Agama", data.religion],
-
-                    ["Asal Sekolah", data.originSchool],
-
-                    ["Alamat", data.address]
-
-                ]
-
-            },
-
-            {
-
-                title: "Informasi Orang Tua / Wali",
-
-                items: [
-
-                    ["Nama Orang Tua", data.parentName],
-
-                    ["Nomor WhatsApp", data.parentPhone],
-
-                    ["Email", data.parentEmail]
-
-                ]
-
-            },
-
-            {
-
-                title: "Informasi Pendaftaran",
-
-                items: [
-
-                    ["Jalur Pendaftaran", data.registrationPath],
-
-                    ["Sumber Informasi", data.source],
-
-                    ["Tahun Ajaran", "2027/2028"]
-
-                ]
-
-            }
-
-        ];
-
-
-        sections.forEach(section => {
-
-            const group = document.createElement("div");
-
-            group.className = "ppdb-preview-group";
-
-
-            const heading = document.createElement("h4");
-
-            heading.textContent = section.title;
-
-            group.appendChild(heading);
-
-
-            section.items.forEach(([label, value]) => {
-
-                group.appendChild(
-                    createPreviewRow(label, value)
-                );
-
-            });
-
-
-            previewContent.appendChild(group);
-
-        });
-
-    }
-
-
-    // SUBMIT FORM: TAMPILKAN PREVIEW
-    form.addEventListener("submit", event => {
-
-        event.preventDefault();
-
-
-        if (!validateForm()) return;
-
-
-        registrationData = getFormData();
-
-
-        renderPreview(registrationData);
-
-
-        preview.hidden = false;
-
-
-        preview.scrollIntoView({
-
-            behavior: "smooth",
-
-            block: "nearest"
-
-        });
-
-    });
-
-
-    // EDIT DATA
-    function closePreview() {
-
-        preview.hidden = true;
-
-        registrationData = null;
-
-        sendButton.disabled = false;
-
-        sendButton.innerHTML =
-            'Kirim via WhatsApp <i class="fa-brands fa-whatsapp"></i>';
-
-    }
-
-
-    editButton?.addEventListener("click", () => {
-
-        closePreview();
-
-        document.getElementById("studentName").focus();
-
-    });
-
-
-    closeButton?.addEventListener("click", closePreview);
-
-
-    // KIRIM KE WHATSAPP
-    sendButton?.addEventListener("click", () => {
-
-        if (!registrationData || sendButton.disabled) return;
-
-
-        const data = registrationData;
-
-
-        const message =
-
-`Assalamu'alaikum, Panitia PPDB MA Az-Zahra.
-
-Saya ingin mengajukan pendaftaran peserta didik baru.
-
-TAHUN AJARAN 2027/2028
-
-=== IDENTITAS CALON SISWA ===
-
-Nama Lengkap: ${data.studentName}
-NISN: ${data.nisn}
-Jenis Kelamin: ${data.gender}
-Tempat Lahir: ${data.birthPlace}
-Tanggal Lahir: ${formatDate(data.birthDate)}
-Agama: ${data.religion}
-Asal Sekolah: ${data.originSchool}
-Alamat: ${data.address}
-
-=== DATA ORANG TUA / WALI ===
-
-Nama Orang Tua: ${data.parentName}
-Nomor WhatsApp: ${data.parentPhone}
-Email: ${data.parentEmail}
-
-=== INFORMASI PENDAFTARAN ===
-
-Jalur Pendaftaran: ${data.registrationPath}
-Mengetahui Sekolah Dari: ${data.source}
-
-Saya bersedia mengikuti proses pendaftaran
-dan verifikasi sesuai ketentuan sekolah.
-
-Mohon informasi mengenai tahapan selanjutnya.
-
-Terima kasih.
-
-Wassalamu'alaikum.`;
-
-
-        const whatsappURL =
-
-            `https://wa.me/${PPDB_CONFIG.whatsappNumber}` +
-
-            `?text=${encodeURIComponent(message)}`;
-
-
-        sendButton.disabled = true;
-
-        sendButton.textContent = "Membuka WhatsApp...";
-
-
-        const whatsappWindow = window.open(
-            whatsappURL,
-            "_blank"
-        );
-
-
-        if (whatsappWindow) {
-
-            whatsappWindow.opener = null;
-
-            sendButton.disabled = false;
-
-            sendButton.innerHTML =
-                'Kirim via WhatsApp <i class="fa-brands fa-whatsapp"></i>';
-
-        } else {
-
-            sendButton.disabled = false;
-
-            sendButton.textContent = "Popup diblokir - Klik untuk mencoba lagi";
-
-
-            showError(
-                "Browser memblokir jendela baru. Izinkan pop-up atau klik kembali tombol WhatsApp."
-            );
-
-        }
-
-    });
-
-}
-
-
-/* =========================================================
-   5. FAQ ACCORDION
-========================================================= */
-
-function initPPDBFAQ() {
-
-    const faqItems = document.querySelectorAll(
-        ".ppdb-faq-item"
-    );
-
-
-    faqItems.forEach(item => {
-
-        const button = item.querySelector(
-            ".ppdb-faq-question"
-        );
-
-
-        button.addEventListener("click", () => {
-
-            const isOpen = item.classList.contains("active");
-
-
-            // TUTUP SEMUA ITEM
-            faqItems.forEach(otherItem => {
-
-                otherItem.classList.remove("active");
-
-                otherItem.querySelector(
-                    ".ppdb-faq-question"
-                ).setAttribute("aria-expanded", "false");
-
-            });
-
-
-            // BUKA ITEM YANG DIKLIK
-            if (!isOpen) {
-
-                item.classList.add("active");
-
-                button.setAttribute("aria-expanded", "true");
-
-            }
-
-        });
-
-    });
-
-}
-
-
-/* =========================================================
-   6. LINK WHATSAPP
-========================================================= */
-
-function initPPDBWhatsApp() {
-
-    const whatsappNumber = PPDB_CONFIG.whatsappNumber;
-
-
-    if (!/^\d{10,15}$/.test(whatsappNumber)) return;
-
-
-    const message = encodeURIComponent(
-
-        "Assalamu'alaikum, saya ingin mendapatkan informasi PPDB MA Az-Zahra tahun ajaran 2027/2028."
-
-    );
-
-
-    const whatsappURL =
-
-        `https://wa.me/${whatsappNumber}?text=${message}`;
-
-
-    const links = [
-
-        "ppdbHelpLink",
-
-        "ppdbCtaWhatsapp",
-
-        "floatingWhatsapp"
-
+    const heading = document.querySelector(".countdown-heading strong");
+    if (heading && distance <= 0) heading.textContent = "Periode pembukaan telah tiba";
+  }
+  countdown(); setInterval(countdown, 1000);
+
+  // Checklist progress
+  const checks = [...document.querySelectorAll(".requirement-item input")];
+  function updateProgress() {
+    const done = checks.filter(input => input.checked).length;
+    if ($("requirementProgressText")) $("requirementProgressText").textContent = `${done} / ${checks.length}`;
+    if ($("requirementProgressBar")) $("requirementProgressBar").style.width = `${checks.length ? done/checks.length*100 : 0}%`;
+  }
+  checks.forEach(input => input.addEventListener("change", updateProgress));
+  updateProgress();
+
+  const form = $("ppdbForm"), preview = $("ppdbPreview"), previewContent = $("ppdbPreviewContent");
+  if (!form) return;
+  let formData = null;
+  const get = id => $(id)?.value.trim() || "";
+  const dateText = value => value ? new Date(`${value}T00:00:00`).toLocaleDateString("id-ID",{day:"2-digit",month:"long",year:"numeric"}) : "-";
+
+  function row(label,value) {
+    const el = document.createElement("div"); el.className = "ppdb-preview-row";
+    const a = document.createElement("span"); a.textContent = label;
+    const b = document.createElement("strong"); b.textContent = value || "-";
+    el.append(a,b); return el;
+  }
+  function renderPreview(data) {
+    previewContent.replaceChildren();
+    const groups = [
+      ["Identitas Calon Siswa", [["Nama Lengkap",data.name],["NISN",data.nisn],["Jenis Kelamin",data.gender],["Tempat Lahir",data.birthPlace],["Tanggal Lahir",dateText(data.birthDate)],["Agama",data.religion],["Asal Sekolah",data.school],["Alamat",data.address]]],
+      ["Orang Tua / Wali", [["Nama Orang Tua",data.parent],["Nomor WhatsApp",data.phone],["Email",data.email]]],
+      ["Informasi Pendaftaran", [["Jalur",data.path],["Sumber Informasi",data.source],["Tahun Ajaran","2027/2028"]]]
     ];
-
-
-    links.forEach(id => {
-
-        const element = document.getElementById(id);
-
-        if (element) {
-
-            element.href = whatsappURL;
-
-        }
-
+    groups.forEach(([title,items]) => {
+      const section = document.createElement("section"); section.className = "ppdb-preview-group";
+      const h = document.createElement("h4"); h.textContent = title; section.append(h);
+      items.forEach(([label,value]) => section.append(row(label,value)));
+      previewContent.append(section);
     });
+  }
 
-}
-
-
-/* =========================================================
-   7. TAHUN COPYRIGHT
-========================================================= */
-
-function initPPDBYear() {
-
-    const year = document.getElementById("currentYear");
-
-    if (year) {
-
-        year.textContent = new Date().getFullYear();
-
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+    $("ppdbFormError").hidden = true;
+    if (!form.reportValidity()) return;
+    const rawPhone = get("parentPhone").replace(/[\s\-+()]/g,"");
+    if (!/^0?8[0-9]{8,12}$/.test(rawPhone)) {
+      $("ppdbFormError").textContent = "Nomor WhatsApp orang tua tidak valid. Contoh: 081234567890.";
+      $("ppdbFormError").hidden = false; $("parentPhone").focus(); return;
     }
+    if (get("studentNisn") && !/^\d{10}$/.test(get("studentNisn"))) {
+      $("ppdbFormError").textContent = "NISN harus terdiri dari 10 angka.";
+      $("ppdbFormError").hidden = false; $("studentNisn").focus(); return;
+    }
+    if (new Date(`${get("birthDate")}T00:00:00`) >= new Date()) {
+      $("ppdbFormError").textContent = "Tanggal lahir harus lebih awal dari hari ini.";
+      $("ppdbFormError").hidden = false; return;
+    }
+    formData = {
+      name:get("studentName"), nisn:get("studentNisn") || "-", gender:get("studentGender"),
+      birthPlace:get("birthPlace"), birthDate:get("birthDate"), religion:get("religion"),
+      school:get("originSchool"), address:get("studentAddress"), parent:get("parentName"),
+      phone:get("parentPhone"), email:get("parentEmail") || "-", path:get("registrationPath"),
+      source:get("registrationSource") || "-"
+    };
+    renderPreview(formData); preview.hidden = false;
+    preview.scrollIntoView({behavior:"smooth",block:"nearest"});
+  });
 
-}
+  function hidePreview() { preview.hidden = true; formData = null; }
+  $("editPpdbData")?.addEventListener("click", () => { hidePreview(); $("studentName").focus(); });
+  $("closePreview")?.addEventListener("click", hidePreview);
+  $("sendPpdbData")?.addEventListener("click", () => {
+    if (!formData) return;
+    if (!/^\d{10,15}$/.test(phone)) {
+      $("ppdbFormError").textContent = "Nomor WhatsApp panitia belum benar. Periksa assets/js/config.js.";
+      $("ppdbFormError").hidden = false; return;
+    }
+    const d = formData;
+    const message = `Assalamu'alaikum, Panitia PPDB MA Az-Zahra.%0A%0ASaya ingin mendaftar Tahun Ajaran 2027/2028.%0A%0AIDENTITAS CALON SISWA%0ANama: ${encodeURIComponent(d.name)}%0ANISN: ${encodeURIComponent(d.nisn)}%0AJenis Kelamin: ${encodeURIComponent(d.gender)}%0ATempat/Tanggal Lahir: ${encodeURIComponent(d.birthPlace + ", " + dateText(d.birthDate))}%0AAgama: ${encodeURIComponent(d.religion)}%0AAsal Sekolah: ${encodeURIComponent(d.school)}%0AAlamat: ${encodeURIComponent(d.address)}%0A%0ADATA ORANG TUA/WALI%0ANama: ${encodeURIComponent(d.parent)}%0AWhatsApp: ${encodeURIComponent(d.phone)}%0AEmail: ${encodeURIComponent(d.email)}%0A%0AJalur: ${encodeURIComponent(d.path)}%0ASumber informasi: ${encodeURIComponent(d.source)}%0A%0AMohon informasi tahapan selanjutnya. Terima kasih.`;
+    window.open(`https://wa.me/${phone}?text=${message}`, "_blank", "noopener");
+  });
+
+  const help = $("ppdbHelpLink");
+  if (help && /^\d{10,15}$/.test(phone)) help.href = `https://wa.me/${phone}?text=${encodeURIComponent("Assalamu'alaikum, saya ingin bertanya tentang PPDB MA Az-Zahra.")}`;
+});

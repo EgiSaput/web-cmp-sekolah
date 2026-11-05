@@ -37,3 +37,18 @@ Alternatif: buka `index.html` langsung di browser. Live Server lebih disarankan.
 - Pukul 18.00 sampai sebelum 06.00 menggunakan Dark Mode.
 - Tema diperiksa ulang setiap menit, serta saat tab/browser aktif kembali.
 - Zona waktu mengikuti pengaturan waktu perangkat pengunjung.
+
+## Pembaruan halaman Galeri, Kontak, dan PPDB
+
+Halaman `pages/galeri.html`, `pages/kontak.html`, dan `pages/ppdb.html` kini memiliki konten lengkap, navbar/footer bersama, serta layout responsif.
+- Galeri: filter kategori, grid foto dummy, dan lightbox.
+- Kontak: informasi kontak dummy dan formulir yang menyiapkan pesan WhatsApp.
+- PPDB: countdown, checklist persyaratan, alur pendaftaran, validasi form, preview, dan pengiriman melalui WhatsApp.
+
+File pendukung:
+- `assets/css/pages-extra.css`
+- `assets/js/galeri.js`
+- `assets/js/kontak.js`
+- `assets/js/ppdb.js`
+
+Ganti data contoh (alamat, email, nomor WhatsApp, jadwal, dan foto) dengan data resmi sebelum website dipublikasikan. Nomor WhatsApp dan tanggal PPDB dikonfigurasi di `assets/js/config.js`.
