@@ -13,7 +13,16 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("contactFeedback").textContent = "Nomor WhatsApp sekolah belum dikonfigurasi.";
       return;
     }
-    const text = `Assalamu'alaikum MA Az-Zahra.%0A%0ASaya ingin menghubungi pihak sekolah.%0A%0ANama: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0ATopik: ${encodeURIComponent(subject)}%0APesan: ${encodeURIComponent(message)}`;
+    if (window.StorageEngine) {
+      window.StorageEngine.addMessage({
+        name,
+        email,
+        phone: "-",
+        subject,
+        message
+      });
+    }
+    const text = `Assalamu'alaikum Sekolah Rahayu.%0A%0ASaya ingin menghubungi pihak sekolah.%0A%0ANama: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0ATopik: ${encodeURIComponent(subject)}%0APesan: ${encodeURIComponent(message)}`;
     window.open(`https://wa.me/${phone}?text=${text}`, "_blank", "noopener");
     document.getElementById("contactFeedback").textContent = "WhatsApp dibuka. Silakan periksa dan kirim pesan di aplikasi WhatsApp.";
   });
