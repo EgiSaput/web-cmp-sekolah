@@ -19,6 +19,15 @@ document.addEventListener("DOMContentLoaded", () => {
         menuButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
       });
     });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && nav.classList.contains("is-open")) {
+        nav.classList.remove("is-open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        menuButton.focus();
+      }
+    });
   }
 
   window.addEventListener("scroll", () => {
