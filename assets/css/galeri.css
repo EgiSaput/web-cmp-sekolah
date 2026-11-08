@@ -1,6 +1,6 @@
 
 /* =========================================================
-   MA AZ-ZAHRA
+   SEKOLAH RAHAYU
    GALERI SEKOLAH
 ========================================================= */
 
@@ -21,7 +21,7 @@
     color: #fff;
 
     background:
-        url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1900&q=85")
+        url("../../images/kegiatan-prestasi.jpg")
         center 48% / cover no-repeat;
 }
 
@@ -111,7 +111,7 @@
 .gallery-hero-decoration > span {
     font-size: 10px;
     font-weight: 800;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     line-height: 1.7;
     text-align: center;
 }
@@ -198,10 +198,6 @@
     color: var(--color-navy);
     font-size: 23px;
     line-height: 1.3;
-}
-
-[data-theme="dark"] .gallery-stat-item strong {
-    color: var(--color-text);
 }
 
 .gallery-stat-item small {
@@ -291,6 +287,7 @@
 
 .gallery-search:focus-within {
     border-color: var(--color-gold);
+    box-shadow: 0 0 0 3px rgba(213, 173, 98, .2);
 }
 
 .gallery-search i {
@@ -517,10 +514,6 @@
     margin: 0 0 8px;
     color: var(--color-navy);
     font-size: 20px;
-}
-
-[data-theme="dark"] .gallery-empty h3 {
-    color: var(--color-text);
 }
 
 .gallery-empty p {
