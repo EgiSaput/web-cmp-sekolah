@@ -5,17 +5,15 @@
   <meta name="theme-color" content="#12345a">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Detail informasi dan berita MA Az-Zahra.">
-    <title>Detail Informasi | MA Az-Zahra</title>
+    <meta name="description" content="Detail informasi dan berita Sekolah Rahayu.">
+    <title>Detail Informasi | Sekolah Rahayu</title>
 
     <link rel="stylesheet" href="../assets/css/variables.css">
-  <script src="../assets/js/theme.js"></script>
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="../assets/css/navbar.css">
     <link rel="stylesheet" href="../assets/css/components.css">
     <link rel="stylesheet" href="../assets/css/pages.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
-  <link rel="stylesheet" href="../assets/css/theme-auto.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,40 +22,65 @@
 </head>
 <body>
 
+    <!-- ANNOUNCEMENT BAR -->
     <div class="announcement-bar">
-        <div class="container">
-            <span><i class="fa-solid fa-bullhorn"></i> Informasi resmi MA Az-Zahra</span>
-            <span class="announcement-right">Berilmu, Berkarakter, Berprestasi</span>
+        <div class="container announcement-inner">
+            <span>
+                <i class="fa-solid fa-location-dot"></i>
+                Jl. Contoh Alamat Sekolah, Indonesia
+            </span>
+
+            <div class="announcement-right">
+                <a href="mailto:info@sekolahrahayu.sch.id">
+                    <i class="fa-regular fa-envelope"></i>
+                    info@sekolahrahayu.sch.id
+                </a>
+
+                <button class="language-toggle" id="languageToggle" type="button" aria-label="Ganti bahasa">
+                    ID <span>/</span> EN
+                </button>
+            </div>
         </div>
     </div>
 
-    <header class="site-header">
+    <!-- NAVBAR -->
+    <header class="site-header" id="siteHeader">
         <div class="container nav-container">
-            <a href="../index.html" class="brand">
-                <span class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></span>
-                <span class="brand-text">
-                    <strong>MA AZ-ZAHRA</strong>
-                    <small>Madrasah Aliyah</small>
+
+            <a class="brand" href="../index.html" aria-label="Sekolah Rahayu Beranda">
+                <span class="brand-logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </span>
+
+                <span class="brand-copy">
+                    <strong>SEKOLAH RAHAYU</strong><small>Membentuk Generasi Berkarakter</small>
                 </span>
             </a>
 
-            <nav class="main-nav" id="mainNav">
-                <a href="../index.html">Beranda</a>
-                <a href="profil.html">Profil</a>
-                <a href="akademik.html">Akademik</a>
-                <a href="guru.html">Guru</a>
-                <a href="berita.html" class="active">Informasi</a>
-                <a href="galeri.html">Galeri</a>
-                <a href="ppdb.html" class="nav-ppdb">PPDB <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                <a href="kontak.html" class="nav-contact">Kontak</a>
-            </nav>
+            <button
+                class="mobile-menu-toggle"
+                id="mobileMenuToggle"
+                type="button"
+                aria-label="Buka navigasi"
+                aria-expanded="false"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-            <div class="nav-actions">
-                <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Buka menu" aria-expanded="false">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
-</div>
+            <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
+                <a class="nav-link" href="../index.html">Beranda</a>
+                <a class="nav-link" href="profil.html">Profil</a>
+                <a class="nav-link" href="akademik.html">Akademik</a>
+                <a class="nav-link" href="guru.html">Guru</a>
+                <a class="nav-link active" href="berita.html">Berita</a>
+                <a class="nav-link" href="pengumuman.html">Pengumuman</a>
+                <a class="nav-link" href="galeri.html">Galeri</a>
+                <a class="nav-link nav-ppdb" href="ppdb.html">
+                    PPDB <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a class="nav-link nav-contact" href="kontak.html">Kontak</a>
+            </nav>
+        </div>
     </header>
 
     <main class="article-page">
@@ -77,7 +100,7 @@
                         <h1 id="articleTitle">Memuat informasi...</h1>
                         <div class="article-meta">
                             <span><i class="fa-regular fa-calendar"></i> <span id="articleDate">-</span></span>
-                            <span><i class="fa-regular fa-user"></i> Admin MA Az-Zahra</span>
+                            <span><i class="fa-regular fa-user"></i> Admin Sekolah Rahayu</span>
                         </div>
                     </div>
 
@@ -105,7 +128,7 @@
                 <aside class="article-sidebar">
                     <div class="article-sidebar-card">
                         <span class="section-kicker">INFORMASI MADRASAH</span>
-                        <h3>Terhubung dengan MA Az-Zahra</h3>
+                        <h3>Terhubung dengan Sekolah Rahayu</h3>
                         <p>Temukan informasi lain seputar kegiatan dan perkembangan madrasah.</p>
                         <a href="berita.html" class="news-read-more">Lihat semua berita <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
@@ -121,21 +144,88 @@
         </div>
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-bottom">
-                <p>© 2026 MA Az-Zahra. Seluruh hak cipta dilindungi.</p>
-                <a href="../index.html">Kembali ke Beranda <i class="fa-solid fa-arrow-up"></i></a>
+    <!-- FOOTER -->
+    <footer class="site-footer" id="siteFooter">
+        <div class="container footer-main">
+
+            <div class="footer-brand">
+                <a class="brand brand-light" href="../index.html">
+                    <span class="brand-logo">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </span>
+                    <span class="brand-copy">
+                        <strong>SEKOLAH RAHAYU</strong><small>Membentuk Generasi Berkarakter</small>
+                    </span>
+                </a>
+
+                <p>
+                    Membangun generasi berilmu, berkarakter, dan siap
+                    memberikan kontribusi positif bagi masyarakat.
+                </p>
+
+                <div class="social-links">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram resmi Sekolah Rahayu">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook resmi Sekolah Rahayu">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="Kanal YouTube resmi Sekolah Rahayu">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Jelajahi</h4>
+                <a href="profil.html">Profil Sekolah</a>
+                <a href="akademik.html">Akademik</a>
+                <a href="guru.html">Guru</a>
+                <a href="galeri.html">Galeri</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Informasi</h4>
+                <a href="berita.html">Berita</a>
+                <a href="pengumuman.html">Pengumuman</a>
+                <a href="ppdb.html">PPDB</a>
+                <a href="kontak.html">Kontak</a>
+                <a href="../admin/login.html" style="margin-top:4px; opacity:0.8;"><i class="fa-solid fa-lock" style="font-size:0.75rem;"></i> Portal CMS</a>
+            </div>
+
+            <div class="footer-column footer-contact">
+                <h4>Hubungi Kami</h4>
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Alamat sekolah (data dummy), Indonesia
+                </p>
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +62 812-0000-0000
+                </p>
+                <p>
+                    <i class="fa-regular fa-envelope"></i>
+                    info@sekolahrahayu.sch.id
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <span>© <span id="currentYear"></span> Sekolah Rahayu. Seluruh hak cipta dilindungi.</span>
+                <span>Dibuat dengan <i class="fa-solid fa-heart"></i> untuk pendidikan.</span>
             </div>
         </div>
     </footer>
 
-    <a href="#" class="back-to-top" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></a>
-    <a href="https://wa.me/6281234567890" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></button>
+    <a href="https://wa.me/6281200000000?text=Halo%20Sekolah%20Rahayu" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/storage.js"></script>
     <script src="../assets/js/data.js"></script>
     <script src="../assets/js/components.js"></script>
     <script src="../assets/js/navigation.js"></script>
