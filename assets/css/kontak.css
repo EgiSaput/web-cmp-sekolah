@@ -1,6 +1,6 @@
 
 /* =========================================================
-   MA AZ-ZAHRA
+   SEKOLAH RAHAYU
    CONTACT PAGE
 ========================================================= */
 
@@ -24,7 +24,7 @@
     overflow: hidden;
 
     background:
-        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1900&q=85")
+        url("../../images/gedung-madrasah.jpg")
         center 48% / cover no-repeat;
 
     color: #fff;
@@ -154,7 +154,7 @@
 .contact-hero-decoration > span {
     font-size: 10px;
     font-weight: 800;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     line-height: 1.8;
     text-align: center;
 }
@@ -273,10 +273,6 @@
     line-height: 1.5;
 }
 
-[data-theme="dark"] .contact-info-card h3 {
-    color: var(--color-text);
-}
-
 .contact-info-card > p {
     min-height: 55px;
 
@@ -301,10 +297,6 @@
     font-weight: 800;
 
     transition: var(--transition);
-}
-
-[data-theme="dark"] .contact-card-link {
-    color: var(--color-gold);
 }
 
 .contact-card-link:hover {
@@ -356,10 +348,6 @@
     font-size: clamp(30px, 4vw, 42px);
     line-height: 1.25;
     letter-spacing: -1.5px;
-}
-
-[data-theme="dark"] .contact-form-aside h2 {
-    color: var(--color-text);
 }
 
 .contact-form-aside h2 em {
@@ -415,10 +403,6 @@
 .contact-aside-item strong {
     color: var(--color-navy);
     font-size: 11px;
-}
-
-[data-theme="dark"] .contact-aside-item strong {
-    color: var(--color-text);
 }
 
 .contact-aside-item small {
@@ -492,10 +476,6 @@
     color: var(--color-navy);
     font-size: 23px;
     line-height: 1.4;
-}
-
-[data-theme="dark"] .contact-form-heading h3 {
-    color: var(--color-text);
 }
 
 .contact-form-heading p {
@@ -577,7 +557,7 @@
 .form-group textarea:focus {
     border-color: var(--color-gold);
 
-    box-shadow: 0 0 0 3px rgba(213, 173, 98, .13);
+    box-shadow: 0 0 0 3px rgba(213, 173, 98, .28);
 }
 
 .form-group input:invalid:not(:placeholder-shown) {
@@ -681,10 +661,6 @@
     letter-spacing: -1.2px;
 }
 
-[data-theme="dark"] .contact-location-heading h2 {
-    color: var(--color-text);
-}
-
 .contact-location-heading h2 em {
     color: #b88c45;
     font-style: normal;
@@ -756,10 +732,6 @@
 
     color: var(--color-navy);
     font-size: 23px;
-}
-
-[data-theme="dark"] .contact-map-placeholder h3 {
-    color: var(--color-text);
 }
 
 .contact-map-placeholder p {
@@ -986,27 +958,6 @@
         padding: 20px 15px;
     }
 
-}
-
-
-/* =========================================================
-   DARK MODE
-========================================================= */
-
-[data-theme="dark"] .contact-info-card {
-    background: var(--color-bg);
-}
-
-[data-theme="dark"] .contact-form-feedback.success {
-    background: #173b2b;
-    color: #a7e1b8;
-    border-color: #326e4b;
-}
-
-[data-theme="dark"] .contact-form-feedback.error {
-    background: #422426;
-    color: #ffc0c0;
-    border-color: #804447;
 }
 
 
