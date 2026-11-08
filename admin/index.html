@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#081a30">
+  <title>CMS Dashboard | Sekolah Rahayu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- SIDEBAR -->
+  <aside class="admin-sidebar" id="adminSidebar">
+    <div class="admin-sidebar-header">
+      <div class="sidebar-logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+      </div>
+      <div class="sidebar-brand">
+        <strong>SEKOLAH RAHAYU</strong>
+        <small>Portal Admin CMS</small>
+      </div>
+    </div>
+
+    <nav class="admin-nav">
+      <span class="nav-section-label">Menu Utama</span>
+      <a href="#dashboard" class="admin-nav-item active" data-tab="dashboard">
+        <i class="fa-solid fa-chart-pie"></i> Dashboard
+      </a>
+      <a href="#news" class="admin-nav-item" data-tab="news">
+        <i class="fa-solid fa-newspaper"></i> Berita & Artikel
+      </a>
+      <a href="#announcements" class="admin-nav-item" data-tab="announcements">
+        <i class="fa-solid fa-bullhorn"></i> Pengumuman Sekolah
+      </a>
+
+      <span class="nav-section-label" style="margin-top: 14px;">Interaksi Pengunjung</span>
+      <a href="#ppdb" class="admin-nav-item" data-tab="ppdb">
+        <i class="fa-solid fa-user-graduate"></i> Konsultasi PPDB
+      </a>
+      <a href="#messages" class="admin-nav-item" data-tab="messages">
+        <i class="fa-solid fa-envelope"></i> Pesan Masuk
+      </a>
+
+      <span class="nav-section-label" style="margin-top: 14px;">Sistem</span>
+      <a href="#settings" class="admin-nav-item" data-tab="settings">
+        <i class="fa-solid fa-sliders"></i> Pengaturan Demo
+      </a>
+    </nav>
+
+    <div class="admin-sidebar-footer">
+      <button class="admin-logout-btn" id="logoutBtn" type="button">
+        <i class="fa-solid fa-right-from-bracket"></i> Keluar (Logout)
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN AREA -->
+  <div class="admin-main">
+    <!-- TOPBAR -->
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <button class="sidebar-toggle-btn" id="sidebarToggleBtn" type="button" aria-label="Buka menu navigasi">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="topbar-title" id="topbarTitle">
+          <h2>Dashboard Utama</h2>
+          <p>Ringkasan statistik konten dan aktivitas madrasah</p>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <a href="../index.html" target="_blank" class="btn-view-site">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Lihat Website
+        </a>
+        <div class="admin-profile-pill">
+          <div class="admin-avatar">AD</div>
+          <div class="admin-info">
+            <span>Administrator</span>
+            <small>Petugas Madrasah</small>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT BODY -->
+    <main class="admin-content">
+
+      <!-- TAB 1: DASHBOARD -->
+      <section class="admin-tab-pane active" id="pane-dashboard">
+        <!-- METRICS CARDS -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-info">
+              <p>Total Berita & Artikel</p>
+              <h3 id="metricNewsCount">0</h3>
+            </div>
+            <div class="metric-icon icon-blue">
+              <i class="fa-solid fa-newspaper"></i>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-info">
+              <p>Pengumuman Aktif</p>
+              <h3 id="metricAnnouncementCount">0</h3>
+            </div>
+            <div class="metric-icon icon-amber">
+              <i class="fa-solid fa-bullhorn"></i>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-info">
+              <p>Calon Siswa PPDB</p>
+              <h3 id="metricPPDBCount">0</h3>
+            </div>
+            <div class="metric-icon icon-emerald">
+              <i class="fa-solid fa-user-graduate"></i>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-info">
+              <p>Pesan Kontak Masuk</p>
+              <h3 id="metricMessageCount">0</h3>
+            </div>
+            <div class="metric-icon icon-indigo">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- QUICK ACTIONS & RECENT ACTIVITY -->
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <div>
+              <h3>Aksi Cepat Pengelolaan</h3>
+              <p>Pintasan untuk membuat konten baru tanpa berpindah menu</p>
+            </div>
+            <div class="admin-card-actions">
+              <button class="btn-primary-admin" id="btnQuickAddNews" type="button">
+                <i class="fa-solid fa-plus"></i> Tambah Berita
+              </button>
+              <button class="btn-secondary-admin" id="btnQuickAddAnnouncement" type="button">
+                <i class="fa-solid fa-bullhorn"></i> Buat Pengumuman
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <div>
+              <h3>Aktivitas Konten Terkini</h3>
+              <p>Daftar pembaruan berita, pengumuman, dan data pendaftaran terbaru</p>
+            </div>
+          </div>
+          <div class="admin-table-wrapper">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th style="width: 140px;">Kategori</th>
+                  <th>Judul / Keterangan</th>
+                  <th style="width: 180px;">Tanggal</th>
+                </tr>
+              </thead>
+              <tbody id="recentActivityTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: NEWS & ARTICLES -->
+      <section class="admin-tab-pane" id="pane-news">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <div>
+              <h3>Daftar Berita & Artikel</h3>
+              <p>Kelola konten kabar madrasah yang tampil di Beranda dan Halaman Berita</p>
+            </div>
+            <div class="admin-card-actions">
+              <input type="search" id="searchNewsInput" placeholder="Cari judul berita..." style="min-height: 44px; padding: 8px 14px; border: 1px solid var(--admin-border); border-radius: 8px; font-size: 13px;">
+              <button class="btn-primary-admin" id="btnAddNewNews" type="button">
+                <i class="fa-solid fa-plus"></i> Tambah Berita Baru
+              </button>
+            </div>
+          </div>
+          <div class="admin-table-wrapper">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Gambar</th>
+                  <th>Judul & Ringkasan</th>
+                  <th>Kategori</th>
+                  <th>Tanggal</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="newsTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: ANNOUNCEMENTS -->
+      <section class="admin-tab-pane" id="pane-announcements">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <div>
+              <h3>Daftar Pengumuman Sekolah</h3>
+              <p>Kelola pengumuman resmi berkala untuk peserta didik, guru, dan wali murid</p>
+            </div>
+            <div class="admin-card-actions">
+              <input type="search" id="searchAnnouncementInput" placeholder="Cari nomor/judul pengumuman..." style="min-height: 44px; padding: 8px 14px; border: 1px solid var(--admin-border); border-radius: 8px; font-size: 13px;">
+              <button class="btn-primary-admin" id="btnAddNewAnnouncement" type="button">
+                <i class="fa-solid fa-plus"></i> Tambah Pengumuman
+              </button>
+            </div>
+          </div>
+          <div class="admin-table-wrapper">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>No. Surat</th>
+                  <th>Judul Pengumuman</th>
+                  <th>Prioritas</th>
+                  <th>Tanggal</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="announcementTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: PPDB SUBMISSIONS -->
+      <section class="admin-tab-pane" id="pane-ppdb">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <div>
+              <h3>Data Asistensi & Pendaftar Posko PPDB</h3>
+              <p>Data calon peserta didik yang berkonsultasi atau menerima pendampingan pendaftaran di posko sekolah</p>
+            </div>
+          </div>
+          <div style="background: #eff6ff; border-left: 4px solid #3b82f6; padding: 14px 18px; margin: 0 24px 18px; border-radius: 6px; font-size: 12px; color: #1e3a8a; line-height: 1.6;">
+            <strong><i class="fa-solid fa-circle-info"></i> Kebijakan Sistem Terpusat:</strong>
+            Pendaftaran resmi calon santri baru Sekolah Rahayu diarahkan langsung ke <strong>Portal PPDB Pusat</strong> (<a href="https://ppdb.kemenag.go.id" target="_blank" style="color: #2563eb; font-weight: 700;">ppdb.kemenag.go.id</a>). Tabel di bawah ini mencatat data calon peserta didik yang datang langsung untuk pendampingan teknis / konsultasi di posko helpdesk madrasah.
+          </div>
+          <div class="admin-table-wrapper">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Nama Calon Siswa</th>
+                  <th>Asal Sekolah</th>
+                  <th>Pilihan Program</th>
+                  <th>Kontak Wali (WA)</th>
+                  <th>Status Saat Ini</th>
+                  <th>Ubah Status</th>
+                </tr>
+              </thead>
+              <tbody id="ppdbTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: CONTACT MESSAGES -->
+      <section class="admin-tab-pane" id="pane-messages">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <div>
+              <h3>Pesan Masuk dari Formulir Kontak</h3>
+              <p>Pertanyaan dan pesan yang masuk melalui halaman Kontak Sekolah Rahayu</p>
+            </div>
+          </div>
+          <div class="admin-table-wrapper">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Nama Pengirim</th>
+                  <th>Nomor WhatsApp</th>
+                  <th>Pesan / Pertanyaan</th>
+                  <th>Tanggal Masuk</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="messagesTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 6: SETTINGS & DEMO -->
+      <section class="admin-tab-pane" id="pane-settings">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <div>
+              <h3>Pengaturan Prototipe & Penyimpanan Browser</h3>
+              <p>Manajemen data dummy localStorage untuk pengujian dan demonstrasi klien</p>
+            </div>
+          </div>
+          <div style="padding: 24px;">
+            <div style="background: #f8fafc; border: 1px solid var(--admin-border); border-radius: 10px; padding: 20px; max-width: 600px; margin-bottom: 24px;">
+              <h4 style="margin: 0 0 8px; color: var(--admin-navy-primary);"><i class="fa-solid fa-database"></i> Status Mock Storage (Frontend LocalStorage)</h4>
+              <p style="margin: 0 0 16px; font-size: 13px; color: var(--admin-text-muted); line-height: 1.6;">
+                Seluruh data Berita, Pengumuman, PPDB, dan Pesan tersimpan secara lokal di browser Anda. Setiap penambahan atau perubahan yang Anda lakukan di dashboard ini akan langsung sinkron dan tampil di website publik.
+              </p>
+              <button class="btn-secondary-admin" id="btnResetDefaults" type="button" style="border-color: #fca5a5; color: #b91c1c;">
+                <i class="fa-solid fa-rotate-left"></i> Reset ke Data Dummy Awal
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- MODAL: ADD / EDIT NEWS -->
+  <div class="admin-modal-backdrop" id="newsModal">
+    <div class="admin-modal">
+      <div class="admin-modal-header">
+        <h3 id="newsModalTitle">Tambah Berita Baru</h3>
+        <button class="btn-icon close-modal-btn" type="button" aria-label="Tutup modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="newsForm">
+        <div class="admin-modal-body">
+          <input type="hidden" id="newsId">
+
+          <div class="form-group-admin">
+            <label for="newsTitle">Judul Berita / Artikel *</label>
+            <input type="text" id="newsTitle" required placeholder="Contoh: Pembinaan Karakter Santri Melalui Literasi">
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="form-group-admin">
+              <label for="newsCategory">Kategori *</label>
+              <select id="newsCategory" required>
+                <option value="Kegiatan">Kegiatan</option>
+                <option value="Akademik">Akademik</option>
+                <option value="Prestasi">Prestasi</option>
+                <option value="Pendidikan">Pendidikan</option>
+                <option value="Pengumuman">Pengumuman</option>
+              </select>
+            </div>
+
+            <div class="form-group-admin">
+              <label for="newsDate">Tanggal Terbit *</label>
+              <input type="date" id="newsDate" required>
+            </div>
+          </div>
+
+          <div class="form-group-admin">
+            <label for="newsImage">URL Gambar Sampul (Foto Lokal / URL Eksternal)</label>
+            <input type="text" id="newsImage" placeholder="../images/gedung-madrasah.jpg">
+          </div>
+
+          <div class="form-group-admin">
+            <label for="newsExcerpt">Ringkasan Singkat (Excerpt) *</label>
+            <textarea id="newsExcerpt" rows="2" required placeholder="Teks 1-2 kalimat untuk pratinjau kartu berita..."></textarea>
+          </div>
+
+          <div class="form-group-admin">
+            <label for="newsContent">Isi Lengkap Berita</label>
+            <textarea id="newsContent" rows="5" placeholder="Tuliskan isi berita atau informasi selengkapnya di sini..."></textarea>
+          </div>
+        </div>
+
+        <div class="admin-modal-footer">
+          <button type="button" class="btn-secondary-admin close-modal-btn">Batal</button>
+          <button type="submit" class="btn-primary-admin"><i class="fa-solid fa-floppy-disk"></i> Simpan Berita</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: ADD / EDIT ANNOUNCEMENT -->
+  <div class="admin-modal-backdrop" id="announcementModal">
+    <div class="admin-modal">
+      <div class="admin-modal-header">
+        <h3 id="announcementModalTitle">Tambah Pengumuman Baru</h3>
+        <button class="btn-icon close-modal-btn" type="button" aria-label="Tutup modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="announcementForm">
+        <div class="admin-modal-body">
+          <input type="hidden" id="announcementId">
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="form-group-admin">
+              <label for="announcementNumber">Nomor Surat Resmi</label>
+              <input type="text" id="announcementNumber" placeholder="052/RAHAYU/XI/2026">
+            </div>
+
+            <div class="form-group-admin">
+              <label for="announcementPriority">Tingkat Urgensi *</label>
+              <select id="announcementPriority" required>
+                <option value="Biasa">Biasa</option>
+                <option value="Penting">Penting / Segera</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group-admin">
+            <label for="announcementTitle">Judul Pengumuman *</label>
+            <input type="text" id="announcementTitle" required placeholder="Contoh: Jadwal Libur Awal Ramadhan 1448 H">
+          </div>
+
+          <div class="form-group-admin">
+            <label for="announcementDate">Tanggal Pengumuman *</label>
+            <input type="date" id="announcementDate" required>
+          </div>
+
+          <div class="form-group-admin">
+            <label for="announcementExcerpt">Ringkasan / Poin Utama *</label>
+            <textarea id="announcementExcerpt" rows="2" required placeholder="Ringkasan poin penting pengumuman..."></textarea>
+          </div>
+
+          <div class="form-group-admin">
+            <label for="announcementContent">Isi Lengkap Pengumuman</label>
+            <textarea id="announcementContent" rows="5" placeholder="Teks isi edaran resmi pengumuman madrasah..."></textarea>
+          </div>
+        </div>
+
+        <div class="admin-modal-footer">
+          <button type="button" class="btn-secondary-admin close-modal-btn">Batal</button>
+          <button type="submit" class="btn-primary-admin"><i class="fa-solid fa-floppy-disk"></i> Simpan Pengumuman</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="admin-toast" id="adminToast">
+    <div class="toast-text">Pemberitahuan berhasil disimpan.</div>
+  </div>
+
+  <script src="../assets/js/storage.js"></script>
+  <script src="../assets/js/admin.js"></script>
+</body>
+</html>
