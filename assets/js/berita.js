@@ -14,6 +14,65 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let activeCategory = "all";
 
+    function populateFromStorage() {
+        if (!newsGrid || !window.StorageEngine) return;
+        const allNews = window.StorageEngine.getNews();
+        if (!allNews || !Array.isArray(allNews) || allNews.length === 0) return;
+
+        // Optionally sync featured article with the latest news
+        const featuredCard = document.querySelector(".featured-news-card");
+        let listNews = allNews;
+        if (featuredCard && allNews.length > 0) {
+            const first = allNews[0];
+            const imgEl = featuredCard.querySelector(".featured-news-image img");
+            const dateEl = featuredCard.querySelector(".news-meta span:first-child");
+            const catEl = featuredCard.querySelector(".news-category");
+            const titleLinks = featuredCard.querySelectorAll("h3 a, .featured-news-image, .news-read-more");
+            const excerptEl = featuredCard.querySelector(".featured-news-content p");
+
+            if (imgEl) {
+                imgEl.src = window.SiteComponents?.resolveImageUrl ? window.SiteComponents.resolveImageUrl(first.image) : first.image;
+                imgEl.alt = first.title;
+            }
+            if (dateEl) dateEl.innerHTML = `<i class="fa-regular fa-calendar"></i> ${first.date}`;
+            if (catEl) catEl.textContent = first.category;
+            if (excerptEl) excerptEl.textContent = first.excerpt || (first.content ? first.content.slice(0, 140) + "..." : "");
+            titleLinks.forEach(link => {
+                link.href = `detail-berita.html?id=${first.id}`;
+                if (link.tagName === "A" && link.parentElement.tagName === "H3") {
+                    link.textContent = first.title;
+                }
+            });
+
+            // If more than 1 item, display the rest in the grid; if only 1, show it in grid too
+            listNews = allNews.length > 1 ? allNews.slice(1) : allNews;
+        }
+
+        newsGrid.innerHTML = listNews.map(item => {
+            const resolvedImg = window.SiteComponents?.resolveImageUrl ? window.SiteComponents.resolveImageUrl(item.image) : item.image;
+            const categoryLower = (item.category || "").toLowerCase();
+            const searchHaystack = `${item.title} ${item.excerpt || ""} ${item.category || ""}`.toLowerCase();
+            const excerpt = item.excerpt || (item.content ? item.content.slice(0, 110) + "..." : "");
+
+            return `
+                <article class="news-card reveal is-visible" data-category="${categoryLower}" data-search="${searchHaystack}">
+                    <a href="detail-berita.html?id=${item.id}" class="news-card-image">
+                        <img src="${resolvedImg}" alt="${item.title}" loading="lazy">
+                        <span>${item.category || "Informasi"}</span>
+                    </a>
+                    <div class="news-card-content">
+                        <div class="news-meta">
+                            <span><i class="fa-regular fa-calendar"></i> ${item.date}</span>
+                        </div>
+                        <h3><a href="detail-berita.html?id=${item.id}">${item.title}</a></h3>
+                        <p>${excerpt}</p>
+                        <a href="detail-berita.html?id=${item.id}" class="news-read-more">Baca selengkapnya <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            `;
+        }).join("");
+    }
+
     function filterNews() {
         if (!newsGrid) return;
 
@@ -102,18 +161,18 @@ document.addEventListener("DOMContentLoaded", () => {
             category: "Kegiatan",
             date: "05 November 2026",
             title: "Membangun Semangat Belajar dan Kebersamaan di Lingkungan Madrasah",
-            image: "../images/1.jpeg",
+            image: "../images/hero-indonesia.jpg",
             paragraphs: [
                 "Lingkungan pendidikan yang positif menjadi bagian penting dalam membentuk peserta didik yang aktif, berkarakter, dan siap menghadapi masa depan. Madrasah bukan hanya tempat untuk memperoleh pengetahuan, tetapi juga ruang untuk membangun nilai, sikap, dan kebersamaan.",
                 "Melalui kegiatan pembelajaran dan aktivitas sekolah, peserta didik didorong untuk saling bekerja sama, menghargai perbedaan, serta mengembangkan potensi yang dimiliki.",
-                "MA Az-Zahra berkomitmen menghadirkan lingkungan pendidikan yang mendukung perkembangan akademik dan pembentukan karakter. Dengan dukungan pendidik dan seluruh warga madrasah, diharapkan peserta didik dapat tumbuh menjadi generasi yang berilmu dan berakhlak."
+                "Sekolah Rahayu berkomitmen menghadirkan lingkungan pendidikan yang mendukung perkembangan akademik dan pembentukan karakter. Dengan dukungan pendidik dan seluruh warga madrasah, diharapkan peserta didik dapat tumbuh menjadi generasi yang berilmu dan berakhlak."
             ]
         },
         2: {
             category: "Akademik",
             date: "03 November 2026",
             title: "Menciptakan Pembelajaran Kreatif dan Menyenangkan",
-            image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=85",
+            image: "../images/fasilitas-lab.jpg",
             paragraphs: [
                 "Pembelajaran yang efektif tidak hanya berfokus pada penyampaian materi, tetapi juga bagaimana peserta didik dapat terlibat aktif dalam proses belajar.",
                 "Pendekatan kreatif dan interaktif dapat membantu peserta didik memahami materi, menyampaikan pendapat, serta mengembangkan kemampuan berpikir kritis.",
@@ -124,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
             category: "Kegiatan",
             date: "30 Oktober 2026",
             title: "Mempererat Kebersamaan Melalui Kegiatan Madrasah",
-            image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1400&q=85",
+            image: "../images/kegiatan-pramuka.jpg",
             paragraphs: [
                 "Kebersamaan merupakan salah satu nilai penting dalam kehidupan madrasah. Hubungan yang baik antara peserta didik, guru, dan seluruh warga sekolah dapat menciptakan lingkungan yang nyaman dan mendukung.",
                 "Berbagai aktivitas bersama dapat menjadi sarana untuk melatih kerja sama, tanggung jawab, kepedulian, dan rasa saling menghargai.",
@@ -135,7 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
             category: "Prestasi",
             date: "25 Oktober 2026",
             title: "Mengapresiasi Semangat dan Potensi Peserta Didik",
-            image: "https://images.unsplash.com/photo-1560785496-3c9d27877182?auto=format&fit=crop&w=1400&q=85",
+            image: "../images/kegiatan-prestasi.jpg",
             paragraphs: [
                 "Setiap peserta didik memiliki potensi dan kemampuan yang dapat dikembangkan melalui proses belajar, latihan, serta pengalaman.",
                 "Apresiasi terhadap usaha dan pencapaian peserta didik merupakan salah satu bentuk dukungan untuk membangun motivasi dan kepercayaan diri.",
@@ -146,18 +205,18 @@ document.addEventListener("DOMContentLoaded", () => {
             category: "Pengumuman",
             date: "20 Oktober 2026",
             title: "Informasi Agenda Kegiatan Madrasah",
-            image: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1400&q=85",
+            image: "../images/gedung-madrasah.jpg",
             paragraphs: [
                 "Informasi agenda kegiatan menjadi salah satu hal penting bagi seluruh warga madrasah agar setiap aktivitas dapat dipersiapkan dengan baik.",
                 "Peserta didik dan orang tua diharapkan memperhatikan informasi resmi yang disampaikan oleh pihak madrasah melalui saluran komunikasi yang tersedia.",
-                "Untuk memperoleh informasi lebih lanjut mengenai agenda dan kegiatan, silakan menghubungi pihak MA Az-Zahra melalui halaman kontak."
+                "Untuk memperoleh informasi lebih lanjut mengenai agenda dan kegiatan, silakan menghubungi pihak Sekolah Rahayu melalui halaman kontak."
             ]
         },
         6: {
             category: "Akademik",
             date: "15 Oktober 2026",
             title: "Menumbuhkan Budaya Literasi di Lingkungan Sekolah",
-            image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1400&q=85",
+            image: "../images/fasilitas-perpus.jpg",
             paragraphs: [
                 "Literasi memiliki peran penting dalam memperluas wawasan dan meningkatkan kemampuan berpikir peserta didik.",
                 "Kebiasaan membaca, memahami informasi, dan menyampaikan gagasan dapat membantu peserta didik menjadi pembelajar yang lebih mandiri.",
@@ -175,10 +234,33 @@ document.addEventListener("DOMContentLoaded", () => {
     if (articleTitle) {
         const params = new URLSearchParams(window.location.search);
         const articleId = params.get("id");
-        const article = newsData[articleId];
+        let article = null;
+
+        if (window.StorageEngine) {
+            const stored = window.StorageEngine.getNews().find(n => String(n.id) === String(articleId));
+            if (stored) {
+                const paragraphs = Array.isArray(stored.content)
+                    ? stored.content
+                    : (stored.content ? stored.content.split(/\n\s*\n/) : [stored.excerpt || ""]);
+                article = {
+                    title: stored.title,
+                    category: stored.category || "Informasi",
+                    date: stored.date,
+                    image: window.SiteComponents?.resolveImageUrl ? window.SiteComponents.resolveImageUrl(stored.image) : stored.image,
+                    paragraphs
+                };
+            }
+        }
+
+        if (!article && newsData[articleId]) {
+            article = newsData[articleId];
+            if (window.SiteComponents?.resolveImageUrl) {
+                article.image = window.SiteComponents.resolveImageUrl(article.image);
+            }
+        }
 
         if (article) {
-            document.title = `${article.title} | MA Az-Zahra`;
+            document.title = `${article.title} | Sekolah Rahayu`;
 
             document.getElementById("articleCategory").textContent = article.category;
             articleTitle.textContent = article.title;
@@ -223,7 +305,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             }
         } else {
-            document.title = "Informasi Tidak Ditemukan | MA Az-Zahra";
+            document.title = "Informasi Tidak Ditemukan | Sekolah Rahayu";
             articleTitle.textContent = "Informasi Tidak Ditemukan";
 
             document.getElementById("articleCategory").textContent = "Informasi";
@@ -235,5 +317,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    populateFromStorage();
     filterNews();
+
+    window.addEventListener("schoolDataUpdated", () => {
+        populateFromStorage();
+        filterNews();
+    });
 });
