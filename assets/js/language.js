@@ -1,7 +1,7 @@
 const TRANSLATIONS = {
   id: {
     "nav.home": "Beranda", "nav.profile": "Profil", "nav.academic": "Akademik",
-    "nav.teachers": "Guru", "nav.news": "Informasi", "nav.gallery": "Galeri",
+    "nav.teachers": "Guru", "nav.news": "Berita", "nav.announcements": "Pengumuman", "nav.gallery": "Galeri",
     "nav.admission": "PPDB", "nav.contact": "Kontak",
     "hero.title": "Membangun Generasi<br><em>Berilmu & Berakhlak</em>",
     "hero.description": "Tempat tumbuhnya generasi unggul yang berwawasan luas, berkarakter Islami, dan siap menghadapi masa depan.",
@@ -9,7 +9,7 @@ const TRANSLATIONS = {
   },
   en: {
     "nav.home": "Home", "nav.profile": "About", "nav.academic": "Academics",
-    "nav.teachers": "Teachers", "nav.news": "News", "nav.gallery": "Gallery",
+    "nav.teachers": "Teachers", "nav.news": "News", "nav.announcements": "Announcements", "nav.gallery": "Gallery",
     "nav.admission": "Admission", "nav.contact": "Contact",
     "hero.title": "Building a Generation<br><em>of Knowledge & Character</em>",
     "hero.description": "A place for outstanding generations to grow with broad knowledge, strong values, and readiness for the future.",
