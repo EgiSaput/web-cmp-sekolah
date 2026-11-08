@@ -15,7 +15,7 @@
  }
 
  .hero-image {
-     background: url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=2000&q=90") center 48%/cover no-repeat;
+     background: url("../../images/hero-indonesia.jpg") center 48%/cover no-repeat;
      transform: scale(1.02);
  }
 
@@ -37,7 +37,7 @@
      color: var(--color-gold);
      font-size: 10px;
      font-weight: 800;
-     letter-spacing: 2px;
+     letter-spacing: 1px;
  }
 
  .eyebrow span {
@@ -51,7 +51,7 @@
      margin: 20px 0 18px;
      font-size: clamp(43px, 6vw, 70px);
      line-height: 1.12;
-     letter-spacing: -2.8px;
+     letter-spacing: -1.2px;
  }
 
  .hero-content h1 em {
@@ -395,7 +395,13 @@
      position: absolute;
      right: 28px;
      bottom: 26px;
-     color: var(--color-gold);
+     color: var(--color-gold-dark, #98702e);
+     font-size: 16px;
+     transition: var(--transition);
+ }
+
+ .program-card>a:hover {
+     color: var(--color-navy);
  }
 
  .principal-grid {
@@ -627,14 +633,15 @@
  }
 
  .social-links a {
-     width: 33px;
-     height: 33px;
+     width: 44px;
+     height: 44px;
      display: grid;
      place-items: center;
      border: 1px solid rgba(255, 255, 255, .18);
      border-radius: 50%;
      color: var(--color-gold);
-     font-size: 12px;
+     font-size: 15px;
+     transition: var(--transition);
  }
 
  .footer-column {
@@ -715,8 +722,8 @@
      z-index: 899;
      right: 29px;
      bottom: 88px;
-     width: 40px;
-     height: 40px;
+     width: 44px;
+     height: 44px;
      display: grid;
      place-items: center;
      border: 0;
