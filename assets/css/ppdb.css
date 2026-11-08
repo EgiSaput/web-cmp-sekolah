@@ -1,6 +1,6 @@
 
 /* =========================================================
-   MA AZ-ZAHRA
+   SEKOLAH RAHAYU
    PPDB PAGE STYLESHEET
 ========================================================= */
 
@@ -111,7 +111,7 @@
     overflow: hidden;
 
     background:
-        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1900&q=85")
+        url("../../images/hero-indonesia.jpg")
         center / cover no-repeat;
 
     color: #fff;
@@ -177,7 +177,7 @@
     color: rgba(255,255,255,.75);
     font-size: 11px;
     font-weight: 700;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
 }
 
 .ppdb-hero-content h1 {
@@ -1762,41 +1762,7 @@
 
 
 /* =========================================================
-   9. DARK MODE
-========================================================= */
-
-[data-theme="dark"] .ppdb-info-card,
-[data-theme="dark"] .ppdb-process-card,
-[data-theme="dark"] .requirement-list-card,
-[data-theme="dark"] .ppdb-form-card,
-[data-theme="dark"] .ppdb-faq-item {
-    background: var(--color-bg);
-}
-
-[data-theme="dark"] .ppdb-info-card h3,
-[data-theme="dark"] .ppdb-process-card h3,
-[data-theme="dark"] .requirement-text strong,
-[data-theme="dark"] .requirement-card-heading h3,
-[data-theme="dark"] .ppdb-form-top h3,
-[data-theme="dark"] .form-section-title h4 {
-    color: var(--color-text);
-}
-
-[data-theme="dark"] .ppdb-form-error {
-    background: #422426;
-    border-color: #804447;
-    color: #ffc0c0;
-}
-
-[data-theme="dark"] .ppdb-field input,
-[data-theme="dark"] .ppdb-field select,
-[data-theme="dark"] .ppdb-field textarea {
-    color-scheme: dark;
-}
-
-
-/* =========================================================
-   10. RESPONSIVE TABLET
+   9. RESPONSIVE TABLET
 ========================================================= */
 
 @media (max-width: 1050px) {
