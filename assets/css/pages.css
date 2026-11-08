@@ -26,7 +26,7 @@
 }
 
 .profile-hero-bg {
-    background: url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1900&q=85")
+    background: url("../../images/gedung-madrasah.jpg")
         center 48% / cover no-repeat;
     transform: scale(1.03);
 }
@@ -638,7 +638,7 @@
     overflow: hidden;
     color: #fff;
     background:
-        url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1900&q=85")
+        url("../../images/hero-indonesia.jpg")
         center 45% / cover no-repeat;
 }
 
@@ -1260,7 +1260,7 @@
     overflow: hidden;
     color: #fff;
     background:
-        url("https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1900&q=85")
+        url("../../images/fasilitas-perpus.jpg")
         center 45% / cover no-repeat;
 }
 
@@ -1501,7 +1501,7 @@
 
 .teacher-search input:focus {
     border-color: var(--color-gold);
-    box-shadow: 0 0 0 3px rgba(213, 173, 98, .12);
+    box-shadow: 0 0 0 3px rgba(213, 173, 98, .28);
 }
 
 .teacher-search input::placeholder {
@@ -1511,9 +1511,9 @@
 .teacher-search > button {
     position: absolute;
     top: 50%;
-    right: 10px;
-    width: 28px;
-    height: 28px;
+    right: 2px;
+    width: 44px;
+    height: 44px;
     display: none;
     place-items: center;
     border: none;
@@ -1556,6 +1556,7 @@
 
 .teacher-filter select:focus {
     border-color: var(--color-gold);
+    box-shadow: 0 0 0 3px rgba(213, 173, 98, .28);
 }
 
 .teacher-result-info {
@@ -1954,7 +1955,7 @@
 }
 
 /* =========================================================
-   INFORMATION / NEWS PAGE - MA AZ-ZAHRA
+   INFORMATION / NEWS PAGE - SEKOLAH RAHAYU
 ========================================================= */
 
 .news-page {
@@ -2058,7 +2059,7 @@
     color: var(--color-navy);
     font-size: 11px;
     font-weight: 800;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     line-height: 1.7;
     text-align: center;
 }
@@ -2256,7 +2257,7 @@
 
 .news-search:focus-within {
     border-color: #d1a24e;
-    box-shadow: 0 0 0 3px rgba(209, 162, 78, .12);
+    box-shadow: 0 0 0 3px rgba(209, 162, 78, .28);
 }
 
 .news-search > i {
