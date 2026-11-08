@@ -5,17 +5,15 @@
   <meta name="theme-color" content="#12345a">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Informasi, berita, kegiatan, dan pengumuman terbaru MA Az-Zahra.">
-    <title>Informasi & Berita | MA Az-Zahra</title>
+    <meta name="description" content="Informasi, berita, kegiatan, dan pengumuman terbaru Sekolah Rahayu.">
+    <title>Informasi & Berita | Sekolah Rahayu</title>
 
     <link rel="stylesheet" href="../assets/css/variables.css">
-  <script src="../assets/js/theme.js"></script>
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="../assets/css/navbar.css">
     <link rel="stylesheet" href="../assets/css/components.css">
     <link rel="stylesheet" href="../assets/css/pages.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
-  <link rel="stylesheet" href="../assets/css/theme-auto.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,40 +22,65 @@
 </head>
 <body>
 
+    <!-- ANNOUNCEMENT BAR -->
     <div class="announcement-bar">
-        <div class="container">
-            <span><i class="fa-solid fa-bullhorn"></i> Selamat datang di website resmi MA Az-Zahra</span>
-            <span class="announcement-right">Membangun Generasi Berilmu dan Berakhlak</span>
+        <div class="container announcement-inner">
+            <span>
+                <i class="fa-solid fa-location-dot"></i>
+                Jl. Contoh Alamat Sekolah, Indonesia
+            </span>
+
+            <div class="announcement-right">
+                <a href="mailto:info@sekolahrahayu.sch.id">
+                    <i class="fa-regular fa-envelope"></i>
+                    info@sekolahrahayu.sch.id
+                </a>
+
+                <button class="language-toggle" id="languageToggle" type="button" aria-label="Ganti bahasa">
+                    ID <span>/</span> EN
+                </button>
+            </div>
         </div>
     </div>
 
-    <header class="site-header">
+    <!-- NAVBAR -->
+    <header class="site-header" id="siteHeader">
         <div class="container nav-container">
-            <a href="../index.html" class="brand">
-                <span class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></span>
-                <span class="brand-text">
-                    <strong>MA AZ-ZAHRA</strong>
-                    <small>Madrasah Aliyah</small>
+
+            <a class="brand" href="../index.html" aria-label="Sekolah Rahayu Beranda">
+                <span class="brand-logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </span>
+
+                <span class="brand-copy">
+                    <strong>SEKOLAH RAHAYU</strong><small>Membentuk Generasi Berkarakter</small>
                 </span>
             </a>
 
-            <nav class="main-nav" id="mainNav">
-                <a href="../index.html">Beranda</a>
-                <a href="profil.html">Profil</a>
-                <a href="akademik.html">Akademik</a>
-                <a href="guru.html">Guru</a>
-                <a href="berita.html" class="active">Informasi</a>
-                <a href="galeri.html">Galeri</a>
-                <a href="ppdb.html" class="nav-ppdb">PPDB <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                <a href="kontak.html" class="nav-contact">Kontak</a>
-            </nav>
+            <button
+                class="mobile-menu-toggle"
+                id="mobileMenuToggle"
+                type="button"
+                aria-label="Buka navigasi"
+                aria-expanded="false"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-            <div class="nav-actions">
-                <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Buka menu" aria-expanded="false">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
-</div>
+            <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
+                <a class="nav-link" href="../index.html">Beranda</a>
+                <a class="nav-link" href="profil.html">Profil</a>
+                <a class="nav-link" href="akademik.html">Akademik</a>
+                <a class="nav-link" href="guru.html">Guru</a>
+                <a class="nav-link active" href="berita.html">Berita</a>
+                <a class="nav-link" href="pengumuman.html">Pengumuman</a>
+                <a class="nav-link" href="galeri.html">Galeri</a>
+                <a class="nav-link nav-ppdb" href="ppdb.html">
+                    PPDB <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a class="nav-link nav-contact" href="kontak.html">Kontak</a>
+            </nav>
+        </div>
     </header>
 
     <main class="news-page">
@@ -70,7 +93,7 @@
                     <h1>Setiap Cerita Punya <em>Makna.</em></h1>
                     <p>
                         Ikuti perkembangan, kegiatan, prestasi, dan berbagai informasi
-                        terbaru dari keluarga besar MA Az-Zahra.
+                        terbaru dari keluarga besar Sekolah Rahayu.
                     </p>
                     <a href="#daftar-berita" class="btn btn-gold">
                         Jelajahi Informasi <i class="fa-solid fa-arrow-down"></i>
@@ -80,7 +103,7 @@
                 <div class="news-hero-decoration">
                     <div class="news-decoration-circle"></div>
                     <i class="fa-regular fa-newspaper"></i>
-                    <span>AZ-ZAHRA<br>UPDATE</span>
+                    <span>RAHAYU<br>UPDATE</span>
                 </div>
             </div>
         </section>
@@ -93,13 +116,13 @@
                         <span class="section-kicker">SOROTAN MADRASAH</span>
                         <h2>Informasi <em>Pilihan</em></h2>
                     </div>
-                    <span class="news-heading-note">Cerita terbaru dari MA Az-Zahra</span>
+                    <span class="news-heading-note">Cerita terbaru dari Sekolah Rahayu</span>
                 </div>
 
                 <article class="featured-news-card reveal">
                     <a href="detail-berita.html?id=1" class="featured-news-image">
-                        <img src="../images/1.jpeg"
-                             alt="Kegiatan pendidikan di lingkungan sekolah">
+                        <img src="../images/hero-indonesia.jpg"
+                             alt="Santri Sekolah Rahayu di Ruang Kelas">
                         <span class="featured-label">BERITA UTAMA</span>
                     </a>
 
@@ -161,7 +184,7 @@
 
                 <div class="news-result-info">
                     <span id="newsResultCount">Menampilkan 6 informasi</span>
-                    <span>Informasi MA Az-Zahra</span>
+                    <span>Informasi Sekolah Rahayu</span>
                 </div>
 
                 <div class="news-grid" id="newsGrid">
@@ -169,8 +192,8 @@
                     <article class="news-card reveal" data-category="akademik"
                              data-search="pembelajaran kreatif akademik siswa kelas">
                         <a href="detail-berita.html?id=2" class="news-card-image">
-                            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80"
-                                 alt="Suasana pembelajaran di kelas">
+                            <img src="../images/fasilitas-lab.jpg"
+                                 alt="Suasana pembelajaran laboratorium">
                             <span>Akademik</span>
                         </a>
                         <div class="news-card-content">
@@ -186,8 +209,8 @@
                     <article class="news-card reveal" data-category="kegiatan"
                              data-search="kegiatan sekolah kebersamaan siswa lingkungan">
                         <a href="detail-berita.html?id=3" class="news-card-image">
-                            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=900&q=80"
-                                 alt="Kegiatan kebersamaan">
+                            <img src="../images/kegiatan-pramuka.jpg"
+                                 alt="Kegiatan Pramuka Penegak">
                             <span>Kegiatan</span>
                         </a>
                         <div class="news-card-content">
@@ -203,8 +226,8 @@
                     <article class="news-card reveal" data-category="prestasi"
                              data-search="prestasi penghargaan kompetisi siswa lomba">
                         <a href="detail-berita.html?id=4" class="news-card-image">
-                            <img src="https://images.unsplash.com/photo-1560785496-3c9d27877182?auto=format&fit=crop&w=900&q=80"
-                                 alt="Penghargaan dan prestasi">
+                            <img src="../images/kegiatan-prestasi.jpg"
+                                 alt="Penghargaan dan prestasi sains">
                             <span>Prestasi</span>
                         </a>
                         <div class="news-card-content">
@@ -220,8 +243,8 @@
                     <article class="news-card reveal" data-category="pengumuman"
                              data-search="pengumuman informasi jadwal kegiatan madrasah">
                         <a href="detail-berita.html?id=5" class="news-card-image">
-                            <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=900&q=80"
-                                 alt="Agenda dan jadwal kegiatan">
+                            <img src="../images/gedung-madrasah.jpg"
+                                 alt="Agenda dan jadwal kegiatan madrasah">
                             <span>Pengumuman</span>
                         </a>
                         <div class="news-card-content">
@@ -237,8 +260,8 @@
                     <article class="news-card reveal" data-category="akademik"
                              data-search="literasi membaca buku pengetahuan pendidikan">
                         <a href="detail-berita.html?id=6" class="news-card-image">
-                            <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=80"
-                                 alt="Perpustakaan dan literasi">
+                            <img src="../images/fasilitas-perpus.jpg"
+                                 alt="Perpustakaan dan literasi madrasah">
                             <span>Akademik</span>
                         </a>
                         <div class="news-card-content">
@@ -268,10 +291,10 @@
                     <div>
                         <span class="section-kicker">TETAP TERHUBUNG</span>
                         <h2>Jangan Lewatkan Informasi <em>Terbaru.</em></h2>
-                        <p>Kunjungi halaman ini secara berkala untuk mengikuti kabar terbaru MA Az-Zahra.</p>
+                        <p>Kunjungi halaman ini secara berkala untuk mengikuti kabar terbaru Sekolah Rahayu.</p>
                     </div>
                     <a href="kontak.html" class="btn btn-gold">
-                        Hubungi Madrasah <i class="fa-solid fa-arrow-right"></i>
+                        Hubungi Madrasah
                     </a>
                 </div>
             </div>
@@ -279,21 +302,88 @@
 
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-bottom">
-                <p>© 2026 MA Az-Zahra. Seluruh hak cipta dilindungi.</p>
-                <a href="../index.html">Kembali ke Beranda <i class="fa-solid fa-arrow-up"></i></a>
+    <!-- FOOTER -->
+    <footer class="site-footer" id="siteFooter">
+        <div class="container footer-main">
+
+            <div class="footer-brand">
+                <a class="brand brand-light" href="../index.html">
+                    <span class="brand-logo">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </span>
+                    <span class="brand-copy">
+                        <strong>SEKOLAH RAHAYU</strong><small>Membentuk Generasi Berkarakter</small>
+                    </span>
+                </a>
+
+                <p>
+                    Membangun generasi berilmu, berkarakter, dan siap
+                    memberikan kontribusi positif bagi masyarakat.
+                </p>
+
+                <div class="social-links">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram resmi Sekolah Rahayu">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook resmi Sekolah Rahayu">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="Kanal YouTube resmi Sekolah Rahayu">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Jelajahi</h4>
+                <a href="profil.html">Profil Sekolah</a>
+                <a href="akademik.html">Akademik</a>
+                <a href="guru.html">Guru</a>
+                <a href="galeri.html">Galeri</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Informasi</h4>
+                <a href="berita.html">Berita</a>
+                <a href="pengumuman.html">Pengumuman</a>
+                <a href="ppdb.html">PPDB</a>
+                <a href="kontak.html">Kontak</a>
+                <a href="../admin/login.html" style="margin-top:4px; opacity:0.8;"><i class="fa-solid fa-lock" style="font-size:0.75rem;"></i> Portal CMS</a>
+            </div>
+
+            <div class="footer-column footer-contact">
+                <h4>Hubungi Kami</h4>
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Alamat sekolah (data dummy), Indonesia
+                </p>
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +62 812-0000-0000
+                </p>
+                <p>
+                    <i class="fa-regular fa-envelope"></i>
+                    info@sekolahrahayu.sch.id
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <span>© <span id="currentYear"></span> Sekolah Rahayu. Seluruh hak cipta dilindungi.</span>
+                <span>Dibuat dengan <i class="fa-solid fa-heart"></i> untuk pendidikan.</span>
             </div>
         </div>
     </footer>
 
-    <a href="#" class="back-to-top" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></a>
-    <a href="https://wa.me/6281234567890" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></button>
+    <a href="https://wa.me/6281200000000?text=Halo%20Sekolah%20Rahayu" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/storage.js"></script>
     <script src="../assets/js/data.js"></script>
     <script src="../assets/js/components.js"></script>
     <script src="../assets/js/navigation.js"></script>
